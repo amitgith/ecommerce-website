@@ -7,6 +7,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
+import { NavLink } from "react-router";
 
 const About = () => {
   const reviews = [
@@ -179,8 +180,8 @@ const About = () => {
             enjoy a secure shopping experience.
           </p>
 
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3 font-semibold text-indigo-600 transition hover:bg-gray-100">
-            Start Shopping
+          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3 font-semibold text-indigo-600 transition hover:bg-gray-100 cursor-pointer">
+            <NavLink to={'/shop'} >Start Shopping</NavLink>
             <ArrowRight size={18} />
           </button>
         </div>

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router";
 import { User, Mail, Lock, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 const Register = () => {
-  const [] = useState(null);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,6 +18,7 @@ const Register = () => {
     users.push(data);
     localStorage.setItem("users", JSON.stringify(users));
     reset();
+    navigate("/login");
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
