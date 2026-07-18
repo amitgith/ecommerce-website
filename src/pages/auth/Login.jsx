@@ -4,6 +4,7 @@ import { Mail, Lock, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
+  
   const navigate = useNavigate();
   const {
     register,
@@ -18,12 +19,12 @@ const Login = () => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
     console.log(users);
 
-    const user = users.find((u) => {
-      // u.email === data.email && u.password === data.password,
-      console.log(u.email, data.email);
-      console.log(u.password, data.password);
-      return u.email === data.email && u.password === data.password;
-    });
+    const user = users.find(
+      (u) => u.email === data.email && u.password === data.password,
+      // console.log(u.email, data.email);
+      // console.log(u.password, data.password);
+      // return u.email === data.email && u.password === data.password;
+    );
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
       navigate("/");
