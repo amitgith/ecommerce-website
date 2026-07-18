@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router";
 import { User, Mail, Lock, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 const Register = () => {
+  const [] = useState(null);
   const {
     register,
     handleSubmit,
@@ -12,7 +13,9 @@ const Register = () => {
   } = useForm({ mode: "onChange" });
   const formSubmit = (data) => {
     console.log(data);
-    localStorage.setItem("data", JSON.stringify(data));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    users.push(data);
+    localStorage.setItem("users", JSON.stringify(users));
     reset();
   };
   return (
