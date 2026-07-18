@@ -1,9 +1,11 @@
 import React from "react";
+import Login from "./pages/Login";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <AppRoutes />
     </div>
   );
 };
