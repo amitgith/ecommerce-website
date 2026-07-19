@@ -8,6 +8,10 @@ export const ContextProvider = ({ children }) => {
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("default");
   const [singleProductData, setSingleProductData] = useState({});
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  console.log(cartItems);
+
   return (
     <MyStore.Provider
       value={{
@@ -21,6 +25,10 @@ export const ContextProvider = ({ children }) => {
         setSort,
         singleProductData,
         setSingleProductData,
+        cartItems,
+        setCartItems,
+        isCartOpen,
+        setIsCartOpen,
       }}
     >
       {children}

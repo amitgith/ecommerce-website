@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ShoppingCart, Star, Heart } from "lucide-react";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { MyStore } from "../context/MyContext";
 
 const ProductCard = ({ product }) => {
   let navigate = useNavigate();
+  const { cartItems, setCartItems, setIsCartOpen } = useContext(MyStore);
+
+  const handleAddToCart = () => {
+    const existingItem = cartItems.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      const updatedCart = cartItems.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      );
+
+      setCartItems(updatedCart);
+    } else {
+      setCartItems([
+        ...cartItems,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ]);
+    }
+
+    // Cart open ho jayega
+    setIsCartOpen(true);
+  };
+
+  const isAdded = cartItems.some((item) => item.id === product.id);
+
   return (
     <div className="overflow-hidden rounded-xl bg-white shadow-md transition hover:-translate-y-2 hover:shadow-xl">
       {/* Image */}
       <div
         onClick={() => navigate(`/detail/${product.id}`)}
-        className="relative h-64 bg-gray-100 p-6"
+        className="relative h-64 bg-gray-100 p-6 cursor-pointer"
       >
         <img
           src={product.image}
@@ -48,9 +78,18 @@ const ProductCard = ({ product }) => {
           </h3>
         </div>
 
-        <button className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 py-3 font-semibold text-white transition hover:bg-indigo-700">
+        <button
+          onClick={handleAddToCart}
+          disabled={isAdded}
+          className={`mt-5 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-semibold text-white transition ${
+            isAdded
+              ? "cursor-not-allowed bg-green-600"
+              : "bg-indigo-600 hover:bg-indigo-700"
+          }`}
+        >
           <ShoppingCart size={18} />
-          Add to Cart
+
+          {isAdded ? "Added" : "Add to Cart"}
         </button>
       </div>
     </div>
