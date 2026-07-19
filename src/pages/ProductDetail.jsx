@@ -86,7 +86,7 @@ const ProductDetail = () => {
               <img
                 src={singleProductData.image}
                 alt={singleProductData.title}
-                className="h-96 object-contain transition duration-300 hover:scale-105"
+                className="h-96 object-cover transition duration-300 hover:scale-105"
               />
             </div>
           </div>
