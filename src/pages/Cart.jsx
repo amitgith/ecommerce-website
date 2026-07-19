@@ -39,6 +39,14 @@ const Cart = () => {
       setIsCartOpen(false);
     }
   }, [cartItems]);
+
+  const handleCheckout = () => {
+    alert("🎉 Order Placed Successfully!");
+
+    setCartItems([]);
+
+    setIsCartOpen(false);
+  };
   return (
     <>
       {/* Overlay */}
@@ -161,7 +169,10 @@ const Cart = () => {
             <span className="text-indigo-600">${totalPrice.toFixed(2)}</span>
           </div>
 
-          <button className="w-full rounded-xl bg-indigo-600 py-4 font-semibold text-white transition hover:bg-indigo-700">
+          <button
+            onClick={handleCheckout}
+            className="w-full cursor-pointer rounded-xl bg-indigo-600 py-4 font-semibold text-white transition hover:bg-indigo-700"
+          >
             Proceed to Checkout
           </button>
         </div>
