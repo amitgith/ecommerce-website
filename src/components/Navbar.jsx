@@ -7,7 +7,7 @@ const Navbar = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   return (
-    <nav className="flex items-center justify-between bg-white px-8 py-4 shadow-md">
+    <nav className="flex items-center justify-between bg-white px-8 py-4 shadow-md ">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <Store className="text-indigo-600" size={28} />

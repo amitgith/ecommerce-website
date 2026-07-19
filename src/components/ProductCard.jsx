@@ -1,11 +1,16 @@
 import React from "react";
 import { ShoppingCart, Star, Heart } from "lucide-react";
+import { useNavigate } from "react-router";
 
-const ShopsCard = ({ product }) => {
+const ProductCard = ({ product }) => {
+  let navigate = useNavigate();
   return (
     <div className="overflow-hidden rounded-xl bg-white shadow-md transition hover:-translate-y-2 hover:shadow-xl">
       {/* Image */}
-      <div className="relative h-64 bg-gray-100 p-6">
+      <div
+        onClick={() => navigate(`/detail/${product.id}`)}
+        className="relative h-64 bg-gray-100 p-6"
+      >
         <img
           src={product.image}
           alt={product.title}
@@ -52,4 +57,4 @@ const ShopsCard = ({ product }) => {
   );
 };
 
-export default ShopsCard;
+export default ProductCard;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { MyStore } from "../context/MyContext";
-import ShopsCard from "../components/ShopsCard";
+import ProductCard from "../components/ProductCard";
 
 const Shop = () => {
   const {
@@ -93,7 +93,7 @@ const Shop = () => {
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <ShopsCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))
         ) : (
           <p className="col-span-full text-center text-lg text-gray-500">

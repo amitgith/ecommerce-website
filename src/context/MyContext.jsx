@@ -7,6 +7,7 @@ export const ContextProvider = ({ children }) => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("default");
+  const [singleProductData, setSingleProductData] = useState({});
   return (
     <MyStore.Provider
       value={{
@@ -18,6 +19,8 @@ export const ContextProvider = ({ children }) => {
         setCategory,
         sort,
         setSort,
+        singleProductData,
+        setSingleProductData,
       }}
     >
       {children}
