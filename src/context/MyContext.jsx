@@ -10,7 +10,6 @@ export const ContextProvider = ({ children }) => {
   const [singleProductData, setSingleProductData] = useState({});
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  console.log(cartItems);
 
   return (
     <MyStore.Provider

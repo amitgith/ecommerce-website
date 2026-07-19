@@ -13,15 +13,19 @@ import {
 } from "lucide-react";
 
 const ProductDetail = () => {
-  const { singleProductData, setSingleProductData } = useContext(MyStore);
-  console.log(singleProductData);
+  const {
+    singleProductData,
+    setSingleProductData,
+    cartItems,
+    setCartItems,
+    setIsCartOpen,
+  } = useContext(MyStore);
 
   let { id } = useParams();
 
   let getSingleProductData = async () => {
     try {
       let res = await axios.get(`https://fakestoreapi.com/products/${id}`);
-      console.log(res);
       setSingleProductData(res.data);
     } catch (error) {
       console.log("Detail api error", error);
@@ -31,6 +35,31 @@ const ProductDetail = () => {
   useEffect(() => {
     getSingleProductData();
   }, []);
+
+  const handleAddToCart = () => {
+    const existing = cartItems.find((item) => item.id === singleProductData.id);
+
+    if (existing) {
+      const updated = cartItems.map((item) =>
+        item.id === singleProductData.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      );
+
+      setCartItems(updated);
+    } else {
+      setCartItems([
+        ...cartItems,
+        {
+          ...singleProductData,
+          quantity: 1,
+        },
+      ]);
+    }
+
+    setIsCartOpen(true);
+  };
+  const isAdded = cartItems.some((item) => item.id === singleProductData.id);
   return (
     <div className="min-h-screen bg-gray-50 py-10">
       <div className="mx-auto max-w-7xl px-6">
@@ -107,9 +136,17 @@ const ProductDetail = () => {
 
             {/* Buttons */}
             <div className="mt-8 flex gap-4">
-              <button className="flex flex-1 items-center justify-center gap-3 rounded-xl bg-indigo-600 py-4 font-semibold text-white transition hover:bg-indigo-700 cursor-pointer">
+              <button
+                onClick={handleAddToCart}
+                disabled={isAdded}
+                className={`flex flex-1 items-center justify-center gap-3 rounded-xl py-4 font-semibold text-white transition ${
+                  isAdded
+                    ? "cursor-not-allowed bg-green-600"
+                    : "cursor-pointer bg-indigo-600 hover:bg-indigo-700"
+                }`}
+              >
                 <ShoppingCart size={20} />
-                Add to Cart
+                {isAdded ? "Added" : "Add to Cart"}
               </button>
 
               <button className="rounded-xl border border-gray-300 bg-white p-4 transition hover:bg-red-50 hover:text-red-500">
