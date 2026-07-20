@@ -10,7 +10,7 @@ import {
 
 const WelcomeBanner = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Hero Section */}
       <div
         className="relative overflow-hidden rounded-3xl border border-neutral-800 bg-[#0f0f0f] p-6 sm:p-8 lg:p-12"
@@ -70,76 +70,7 @@ const WelcomeBanner = () => {
           </div>
         </div>
       </div>
-
-      {/* Stats Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
-        {/* Card 1 */}
-        <div className="rounded-2xl border border-neutral-800 bg-[#111111] p-6 hover:border-lime-400/40 hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between">
-            <div className="bg-lime-400/10 p-3 rounded-xl">
-              <ShoppingCart className="text-lime-400" size={22} />
-            </div>
-
-            <span className="text-3xl font-bold text-white">0</span>
-          </div>
-
-          <h3 className="mt-5 text-white font-semibold">Cart Items</h3>
-
-          <p className="text-sm text-neutral-400 mt-1">
-            Products currently in your cart.
-          </p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="rounded-2xl border border-neutral-800 bg-[#111111] p-6 hover:border-indigo-500/40 hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between">
-            <div className="bg-indigo-500/10 p-3 rounded-xl">
-              <DollarSign className="text-indigo-400" size={22} />
-            </div>
-
-            <span className="text-3xl font-bold text-white">$0</span>
-          </div>
-
-          <h3 className="mt-5 text-white font-semibold">Cart Value</h3>
-
-          <p className="text-sm text-neutral-400 mt-1">Ready for checkout.</p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="rounded-2xl border border-neutral-800 bg-[#111111] p-6 hover:border-yellow-500/40 hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between">
-            <div className="bg-yellow-500/10 p-3 rounded-xl">
-              <Star className="text-yellow-400" size={22} />
-            </div>
-
-            <span className="text-3xl font-bold text-white">5</span>
-          </div>
-
-          <h3 className="mt-5 text-white font-semibold">Top Products</h3>
-
-          <p className="text-sm text-neutral-400 mt-1">
-            Highest rated products.
-          </p>
-        </div>
-
-        {/* Card 4 */}
-        <div className="rounded-2xl border border-neutral-800 bg-[#111111] p-6 hover:border-purple-500/40 hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between">
-            <div className="bg-purple-500/10 p-3 rounded-xl">
-              <Grid2x2 className="text-purple-400" size={22} />
-            </div>
-
-            <span className="text-3xl font-bold text-white">6</span>
-          </div>
-
-          <h3 className="mt-5 text-white font-semibold">Categories</h3>
-
-          <p className="text-sm text-neutral-400 mt-1">
-            Browse product categories.
-          </p>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
