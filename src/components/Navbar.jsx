@@ -18,7 +18,7 @@ const Navbar = () => {
       sticky top-0 z-50
       flex items-center justify-between
       bg-black
-      px-[85px]
+      px-90
       py-4
       border-b border-white/30
       shadow-md
