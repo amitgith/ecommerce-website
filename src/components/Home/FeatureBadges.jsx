@@ -8,8 +8,8 @@ const FeatureBadges = () => {
       icon: Zap,
       title: "Fast Delivery",
       desc: "Same-day on select items",
-      iconColor: "text-lime-400",
-      bg: "bg-lime-400/10",
+      iconColor: "text-indigo-400",
+      bg: "bg-indigo-400/10",
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const FeatureBadges = () => {
     <section
       className="
       w-full
-      bg-[#0a0a0a]
+      bg-black
       py-10
       px-4
       sm:px-6
@@ -46,7 +46,7 @@ const FeatureBadges = () => {
         grid
         grid-cols-1
         md:grid-cols-3
-        gap-5
+        gap-5 
       "
       >
         {badges.map((badge) => {
@@ -61,15 +61,13 @@ const FeatureBadges = () => {
                   items-center
                   gap-5
                   bg-[#111111]
-                  border
-                  border-neutral-800
                   rounded-2xl
                   p-5
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-lime-400/30
-                  hover:shadow-lg
+                  hover:border-indigo-400/30
+                  hover:shadow-lg border border-white
                 "
             >
               {/* Icon */}
@@ -86,7 +84,7 @@ const FeatureBadges = () => {
                     shrink-0
                     group-hover:scale-110
                     transition
-                    duration-300
+                    duration-300 
                   `}
               >
                 <Icon size={24} strokeWidth={2} className={badge.iconColor} />
@@ -94,7 +92,7 @@ const FeatureBadges = () => {
 
               {/* Content */}
 
-              <div className="min-w-0">
+              <div className="min-w-0 ">
                 <h4
                   className="
                       text-white

@@ -1,29 +1,20 @@
 import React, { useContext } from "react";
-import {
-  ShoppingCart,
-  DollarSign,
-  Star,
-  Grid2x2,
-} from "lucide-react";
+import { ShoppingCart, DollarSign, Star, Grid2x2 } from "lucide-react";
 import { MyStore } from "../../context/MyContext";
 
 const StatCards = () => {
   const { cartItems, shopsData } = useContext(MyStore);
   const { setCategory } = useContext(MyStore);
-  
 
   // Total Cart Items
   const cartCount = cartItems.reduce(
     (total, item) => total + (item.quantity || 1),
-    0
+    0,
   );
 
   // Total Cart Value
   const cartValue = cartItems
-    .reduce(
-      (total, item) => total + item.price * (item.quantity || 1),
-      0
-    )
+    .reduce((total, item) => total + item.price * (item.quantity || 1), 0)
     .toFixed(2);
 
   // Top Rated Products (4.5+ Rating)
@@ -31,8 +22,8 @@ const StatCards = () => {
     shopsData?.filter((item) => item.rating?.rate >= 4.5).length || 0;
 
   // Unique Categories
-  const categories =
-    [...new Set(shopsData?.map((item) => item.category) || [])].length;
+  const categories = [...new Set(shopsData?.map((item) => item.category) || [])]
+    .length;
 
   const stats = [
     {
@@ -40,7 +31,7 @@ const StatCards = () => {
       value: cartCount,
       description: "Products currently in your cart.",
       icon: ShoppingCart,
-      color: "lime",
+      color: "indigo",
     },
     {
       title: "Cart Value",
@@ -67,9 +58,9 @@ const StatCards = () => {
 
   const colors = {
     lime: {
-      icon: "text-lime-400",
-      bg: "bg-lime-400/10",
-      border: "hover:border-lime-400/40",
+      icon: "text-indigo-400",
+      bg: "bg-indigo-400/10",
+      border: "hover:border-indigo-400/40",
     },
     indigo: {
       icon: "text-indigo-400",
@@ -89,7 +80,7 @@ const StatCards = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-8 ">
       {stats.map((stat) => {
         const Icon = stat.icon;
         const style = colors[stat.color];
@@ -97,7 +88,7 @@ const StatCards = () => {
         return (
           <div
             key={stat.title}
-            className={`rounded-2xl border border-neutral-800 bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg ${style.border}`}
+            className={`rounded-2xl border border-white bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg ${style.border}`}
           >
             {/* Top */}
             <div className="flex items-center justify-between">
@@ -112,9 +103,7 @@ const StatCards = () => {
 
             {/* Content */}
             <div className="mt-5">
-              <h3 className="text-lg font-semibold text-white">
-                {stat.title}
-              </h3>
+              <h3 className="text-lg font-semibold text-white">{stat.title}</h3>
 
               <p className="mt-2 text-sm text-neutral-400">
                 {stat.description}

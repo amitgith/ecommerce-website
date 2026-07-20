@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store } from "lucide-react";
-import { MyStore } from "../context/MyContext";
+import { MyStore } from "../../context/MyContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,13 +27,13 @@ const Navbar = () => {
       {/* Logo */}
 
       <div className="flex items-center gap-2">
-        <Store size={30} className="text-amber-600" />
+        <Store size={30} className="text-indigo-600" />
 
         <h1
           className="
           text-2xl
           font-bold
-          text-amber-600
+          text-indigo-600
           "
         >
           SkyMart
@@ -54,7 +54,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
+            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
           }
         >
           Home
@@ -63,7 +63,7 @@ const Navbar = () => {
         <NavLink
           to="/shop"
           className={({ isActive }) =>
-            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
+            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
           }
         >
           Shop
@@ -72,7 +72,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
+            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
           }
         >
           About
@@ -117,7 +117,7 @@ const Navbar = () => {
             size={26}
             className="
             text-white
-            hover:text-amber-600
+            hover:text-indigo-600
             transition
             "
           />
@@ -134,7 +134,7 @@ const Navbar = () => {
                 items-center
                 justify-center
                 rounded-full
-                bg-amber-600
+                bg-indigo-600
                 text-xs
                 font-bold
                 text-black

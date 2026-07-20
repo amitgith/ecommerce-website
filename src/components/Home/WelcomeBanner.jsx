@@ -7,13 +7,15 @@ import {
   Star,
   Grid2x2,
 } from "lucide-react";
+import { NavLink } from "react-router";
 
 const WelcomeBanner = () => {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
       {/* Hero Section */}
       <div
-        className="relative overflow-hidden rounded-3xl border border-neutral-800 bg-[#0f0f0f] p-6 sm:p-8 lg:p-12"
+        className="relative overflow-hidden rounded-3xl  bg-[#0f0f0f] p-6 sm:p-8 lg:p-12 border border-white "
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -23,7 +25,7 @@ const WelcomeBanner = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Left Side */}
           <div className="w-full lg:w-2/3">
-            <p className="flex items-center gap-2 text-lime-400 font-semibold uppercase tracking-widest text-sm mb-4">
+            <p className="flex items-center gap-2 text-indigo-400 font-semibold uppercase tracking-widest text-sm mb-4">
               <ShoppingBag size={16} />
               Good Morning 👋
             </p>
@@ -31,7 +33,7 @@ const WelcomeBanner = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
               Welcome Back,
               <br />
-              <span className="text-lime-400">Amit!</span>
+              <span className="text-indigo-400">{currentUser?.fullname}</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-neutral-400 text-sm sm:text-base leading-7">
@@ -41,21 +43,26 @@ const WelcomeBanner = () => {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="w-full sm:w-auto bg-lime-400 text-black px-6 py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-lime-300 duration-300">
-                Shop Now
-                <ArrowRight size={18} />
-              </button>
+              <NavLink to={"/shop"}>
+                {" "}
+                <button className="w-full sm:w-auto bg-indigo-400 cursor-pointer text-black px-6 py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-indigo-300 duration-300">
+                  Shop Now
+                  <ArrowRight size={18} />
+                </button>
+              </NavLink>
 
-              <button className="w-full sm:w-auto border border-neutral-700 text-white px-6 py-3 rounded-full hover:bg-neutral-900 duration-300">
-                View All Products
-              </button>
+              <NavLink to={"/shop"}>
+                <button className="w-full sm:w-auto border cursor-pointer border-neutral-700 text-white px-6 py-3 rounded-full hover:bg-neutral-900 duration-300">
+                  View All Products
+                </button>
+              </NavLink>
             </div>
           </div>
 
           {/* Right Side */}
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 w-full /lg:w-[220px]">
-            <div className="rounded-2xl border border-lime-400/20 bg-lime-400/5 p-6 text-center">
-              <h2 className="text-4xl font-bold text-lime-400">20+</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 w-50 /lg:w-[220px]">
+            <div className="rounded-2xl border border-indigo-400/20 bg-indigo-400/5 p-6 text-center">
+              <h2 className="text-4xl font-bold text-indigo-400">20+</h2>
               <p className="text-xs text-neutral-400 uppercase tracking-wider mt-2">
                 Products
               </p>

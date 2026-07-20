@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { Outlet } from "react-router";
-import Cart from "../pages/Cart";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black min-h-screen">
       <Navbar />
-      <Cart />
       <Outlet />
+      <Footer />
     </div>
   );
 };

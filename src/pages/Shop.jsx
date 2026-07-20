@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { MyStore } from "../context/MyContext";
-import ProductCard from "../components/ProductCard";
-import Footer from "../components/Footer";
+import ProductCard from "../components/Common/ProductCard";
+import Footer from "../components/Common/Footer";
 
 const Shop = () => {
   const {
@@ -52,7 +52,9 @@ const Shop = () => {
     });
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-10">
+    <div className="mx-auto max-w-7xl px-6 py-10 text-white">
+      <h1>All Products</h1>
+      <p>50 products found</p>
       {/* Search + Filter + Sort */}
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Search */}
@@ -61,14 +63,14 @@ const Shop = () => {
           placeholder="Search products..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-indigo-600 md:w-80"
+          className="w-full rounded-lg border  border-gray-300 px-4 py-3 outline-none transition focus:border-indigo-600 md:w-80"
         />
 
         {/* Category */}
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
+          className="rounded-lg text-white bg-black  border border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
         >
           <option value="all">All Categories</option>
           <option value="men's clothing">Men's Clothing</option>
@@ -81,7 +83,7 @@ const Shop = () => {
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
+          className="rounded-lg border text-white bg-black border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
         >
           <option value="default">Sort By Price</option>
           <option value="low-high">Price: Low to High</option>
@@ -102,7 +104,6 @@ const Shop = () => {
           </p>
         )}
       </div>
-      <Footer/>
     </div>
   );
 };

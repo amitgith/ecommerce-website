@@ -28,7 +28,7 @@ const ProductLists = () => {
 
         <div
           className="
-bg-white
+bg-[#111111] border border-white
 rounded-3xl
 p-6
 "
@@ -68,7 +68,7 @@ fill-yellow-500
                 className="
 text-xl
 font-bold
-text-black
+text-white
 "
               >
                 Top Rated
@@ -79,9 +79,9 @@ text-black
               className="
   flex items-center gap-1
   bg-black
-  text-lime-400
+  text-indigo-400
   px-4 py-2
-  rounded-full
+  rounded-full cursor-pointer
   text-xs
   font-semibold
   hover:opacity-80
@@ -173,7 +173,7 @@ text-neutral-600
 
                 <span
                   className="
-text-lime-600
+text-indigo-600
 font-bold
 text-sm
 "
@@ -189,7 +189,8 @@ text-sm
 
         <div
           className="
-bg-white
+
+bg-[#111111] border border-white
 rounded-3xl
 p-6
 "
@@ -211,7 +212,7 @@ gap-3
             >
               <div
                 className="
-bg-lime-400/20
+bg-indigo-400/20
 p-2
 rounded-xl
 "
@@ -219,8 +220,8 @@ rounded-xl
                 <Zap
                   size={22}
                   className="
-text-lime-500
-fill-lime-500
+text-indigo-500
+fill-indigo-500
 "
                 />
               </div>
@@ -229,7 +230,7 @@ fill-lime-500
                 className="
 text-xl
 font-bold
-text-black
+text-white
 "
               >
                 New Arrivals
@@ -240,11 +241,11 @@ text-black
               className="
   flex items-center gap-1
   bg-black
-  text-lime-400
+  text-indigo-400
   px-4 py-2
   rounded-full
   text-xs
-  font-semibold
+  font-semibold cursor-pointer
   hover:opacity-80
   transition
   "
@@ -318,7 +319,7 @@ mt-1
 
                 <span
                   className="
-text-lime-600
+text-indigo-600
 font-bold
 text-sm
 "

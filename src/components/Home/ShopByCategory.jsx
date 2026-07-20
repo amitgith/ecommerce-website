@@ -23,8 +23,8 @@ const ShopByCategory = () => {
       value: "men's clothing",
       count: "Products",
       icon: Shirt,
-      color: "text-lime-400",
-      bg: "bg-lime-500/10",
+      color: "text-indigo-400",
+      bg: "bg-indigo-500/10",
     },
     {
       id: 3,
@@ -62,7 +62,7 @@ const ShopByCategory = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-lime-400 text-sm font-semibold uppercase tracking-widest">
+          <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest">
             Categories
           </p>
 
@@ -73,7 +73,7 @@ const ShopByCategory = () => {
 
         <button
           onClick={handleViewAll}
-          className="hidden sm:flex items-center gap-2 text-lime-400 font-semibold hover:text-lime-300 transition"
+          className="hidden sm:flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition"
         >
           View All
           <ArrowRight size={18} />
@@ -90,7 +90,7 @@ const ShopByCategory = () => {
             <div
               key={category.id}
               onClick={() => handleCategoryClick(category.value)}
-              className="group rounded-2xl border border-neutral-800 bg-[#111111] p-6 flex flex-col items-center text-center cursor-pointer hover:border-lime-400/40 hover:-translate-y-2 transition-all duration-300"
+              className="group rounded-2xl bg-[#111111] p-6 flex flex-col items-center text-center cursor-pointer hover:border-indigo-400/40 hover:-translate-y-2 transition-all duration-300 border border-white"
             >
 
               {/* Icon */}
@@ -125,7 +125,7 @@ const ShopByCategory = () => {
       <div className="flex justify-center mt-8 sm:hidden">
         <button
           onClick={handleViewAll}
-          className="flex items-center gap-2 text-lime-400 font-semibold"
+          className="flex items-center gap-2 text-indigo-400 font-semibold"
         >
           View All
           <ArrowRight size={18}/>

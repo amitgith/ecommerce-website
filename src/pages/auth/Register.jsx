@@ -13,7 +13,6 @@ const Register = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
   const formSubmit = (data) => {
-    console.log(data);
     const users = JSON.parse(localStorage.getItem("users")) || [];
     users.push(data);
     localStorage.setItem("users", JSON.stringify(users));
