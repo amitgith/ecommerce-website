@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { MyStore } from "../context/MyContext";
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 const Shop = () => {
   const {
@@ -101,6 +102,7 @@ const Shop = () => {
           </p>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

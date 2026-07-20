@@ -10,25 +10,27 @@ import About from "../pages/About";
 import Layout from "../components/Layout";
 import ProductDetail from "../pages/ProductDetail";
 import Cart from "../pages/Cart";
+import ProductLists from "../components/Home/ProductLists";
 
 const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/login" element={<Login />} />
-
         <Route path="/register" element={<Register />} />
-
-        <Route element={<Layout />}>
+        <Route path="/login" element={<Login />} />
+        <Route
+          element={
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          }
+        >
           <Route path="/" element={<Home />} />
-
-          <Route path="/home" element={<Home />} />
-
           <Route path="/shop" element={<Shop />} />
-
-          <Route path="/product/:id" element={<ProductDetail />} />
-
           <Route path="/about" element={<About />} />
+          <Route path="/detail/:id" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </div>

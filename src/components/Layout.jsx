@@ -5,7 +5,7 @@ import Cart from "../pages/Cart";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="bg-black">
       <Navbar />
       <Cart />
       <Outlet />

@@ -8,6 +8,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { NavLink } from "react-router";
+import Footer from "../components/Footer";
 
 const About = () => {
   const reviews = [
@@ -186,6 +187,7 @@ const About = () => {
           </button>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

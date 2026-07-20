@@ -39,6 +39,10 @@ const Cart = () => {
       setIsCartOpen(false);
     }
   }, [cartItems]);
+  const clearCart = () => {
+    setCartItems([]);
+    setIsCartOpen(false);
+  };
 
   const handleCheckout = () => {
     alert("🎉 Order Placed Successfully!");
@@ -156,6 +160,8 @@ const Cart = () => {
 
         {/* Footer */}
 
+        {/* Footer */}
+
         <div className="absolute bottom-0 w-full border-t bg-white p-5">
           <div className="mb-2 flex justify-between">
             <span>Total Items</span>
@@ -169,9 +175,43 @@ const Cart = () => {
             <span className="text-indigo-600">${totalPrice.toFixed(2)}</span>
           </div>
 
+          {/* Clear Cart */}
+
+          <button
+            onClick={clearCart}
+            className="
+    mb-3
+    w-full
+    cursor-pointer
+    rounded-xl
+    border
+    border-red-500
+    py-3
+    font-semibold
+    text-red-500
+    transition
+    hover:bg-red-500
+    hover:text-white
+    "
+          >
+            Clear Cart
+          </button>
+
+          {/* Checkout */}
+
           <button
             onClick={handleCheckout}
-            className="w-full cursor-pointer rounded-xl bg-indigo-600 py-4 font-semibold text-white transition hover:bg-indigo-700"
+            className="
+    w-full
+    cursor-pointer
+    rounded-xl
+    bg-indigo-600
+    py-4
+    font-semibold
+    text-white
+    transition
+    hover:bg-indigo-700
+    "
           >
             Proceed to Checkout
           </button>

@@ -1,27 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store } from "lucide-react";
+import { MyStore } from "../context/MyContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+  const { cartItems, setIsCartOpen } = useContext(MyStore);
+
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
-    <nav className="flex items-center justify-between bg-white px-8 py-4 shadow-md ">
+    <nav
+      className="
+      sticky top-0 z-50
+      flex items-center justify-between
+      bg-black
+      px-[85px]
+      py-4
+      border-b border-white/30
+      shadow-md
+      "
+    >
       {/* Logo */}
+
       <div className="flex items-center gap-2">
-        <Store className="text-indigo-600" size={28} />
-        <h1 className="text-2xl font-bold text-indigo-600">SkyMart</h1>
+        <Store size={30} className="text-amber-600" />
+
+        <h1
+          className="
+          text-2xl
+          font-bold
+          text-amber-600
+          "
+        >
+          SkyMart
+        </h1>
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center gap-8 text-gray-700 font-medium">
+
+      <div
+        className="
+        flex
+        items-center
+        gap-10
+        text-gray-300
+        font-medium
+        "
+      >
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive
-              ? "text-indigo-600 font-semibold"
-              : "hover:text-indigo-600 transition"
+            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
           }
         >
           Home
@@ -30,9 +63,7 @@ const Navbar = () => {
         <NavLink
           to="/shop"
           className={({ isActive }) =>
-            isActive
-              ? "text-indigo-600 font-semibold"
-              : "hover:text-indigo-600 transition"
+            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
           }
         >
           Shop
@@ -41,9 +72,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive
-              ? "text-indigo-600 font-semibold"
-              : "hover:text-indigo-600 transition"
+            isActive ? "text-amber-600" : "hover:text-amber-600 transition"
           }
         >
           About
@@ -51,21 +80,90 @@ const Navbar = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-5">
-        <span className="font-medium text-gray-700">
+
+      <div
+        className="
+        flex
+        items-center
+        gap-5
+        bg-white/10
+        border border-white/20
+        rounded-xl
+        px-4
+        py-2
+        "
+      >
+        {/* User Name */}
+
+        <span
+          className="
+          text-white
+          font-medium
+          "
+        >
           Hi, {currentUser?.fullname}
         </span>
 
-        <button className="relative cursor-pointer">
-          <ShoppingCart className="text-gray-700 hover:text-indigo-600 transition" />
+        {/* Cart Button */}
+
+        <button
+          onClick={() => setIsCartOpen(true)}
+          className="
+          relative
+          cursor-pointer
+          "
+        >
+          <ShoppingCart
+            size={26}
+            className="
+            text-white
+            hover:text-amber-600
+            transition
+            "
+          />
+
+          {cartCount > 0 && (
+            <span
+              className="
+                absolute
+                -top-3
+                -right-3
+                flex
+                h-5
+                w-5
+                items-center
+                justify-center
+                rounded-full
+                bg-amber-600
+                text-xs
+                font-bold
+                text-black
+                "
+            >
+              {cartCount}
+            </span>
+          )}
         </button>
+
+        {/* Logout */}
 
         <button
           onClick={() => {
             localStorage.removeItem("currentUser");
             navigate("/login");
           }}
-          className="flex cursor-pointer items-center gap-2 rounded-lg bg-red-500 px-4 py-2 text-white transition hover:bg-red-600"
+          className="
+          flex
+          items-center
+          gap-2
+          rounded-lg
+          bg-red-500
+          px-4
+          py-2
+          text-white
+          transition
+          hover:bg-red-600
+          "
         >
           <LogOut size={18} />
           Logout
