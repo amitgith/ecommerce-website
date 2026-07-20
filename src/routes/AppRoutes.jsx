@@ -15,20 +15,20 @@ const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
+
+        <Route path="/register" element={<Register />} />
+
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+
+          <Route path="/home" element={<Home />} />
+
           <Route path="/shop" element={<Shop />} />
+
+          <Route path="/product/:id" element={<ProductDetail />} />
+
           <Route path="/about" element={<About />} />
-          <Route path="/detail/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </div>
