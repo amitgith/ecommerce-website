@@ -17,9 +17,6 @@ const Login = () => {
 
     const user = users.find(
       (u) => u.email === data.email && u.password === data.password,
-      // console.log(u.email, data.email);
-      // console.log(u.password, data.password);
-      // return u.email === data.email && u.password === data.password;
     );
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
@@ -30,100 +27,296 @@ const Login = () => {
 
     reset();
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md rounded-2xl bg-white shadow-2xl p-8">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-[#080808] text-white font-sans">
+      {/* Left Side */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-between p-8 sm:p-12 lg:p-16 relative overflow-hidden">
         {/* Logo */}
-        <div className="flex justify-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600">
-            <ShoppingBag size={30} className="text-white" />
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600">
+            <ShoppingBag size={20} className="text-black" />
           </div>
+
+          <span className="text-2xl font-bold">SkyMart</span>
         </div>
 
-        {/* Heading */}
-        <h1 className="mt-5 text-center text-3xl font-bold text-gray-800">
-          Sign In
-        </h1>
+        {/* Content */}
+        <div className="max-w-xl space-y-6 mt-10 lg:mt-0">
+          <span className="text-xs font-semibold tracking-widest text-indigo-400 uppercase">
+            Welcome back
+          </span>
 
-        <p className="mt-2 text-center text-gray-500">
-          Enter your credentials to continue
-        </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Shop the future.
+            <br />
+            <span className="text-indigo-600">Today.</span>
+          </h1>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit(formSubmit)} className="mt-8 space-y-5">
-          {/* Email */}
-          <div className="relative">
-            <Mail
-              size={20}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-            />
-
-            <input
-              {...register("email", {
-                required: "Email is required",
-              })}
-              type="email"
-              placeholder="Email address"
-              className="w-full rounded-lg border border-gray-300 py-3 pl-12 pr-4 text-gray-700 outline-none transition focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
-            />
-
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.email.message}
-              </p>
-            )}
-          </div>
-
-          {/* Password */}
-          <div className="relative">
-            <Lock
-              size={20}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-            />
-
-            <input
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 4,
-                  message: "Minimum 4 digits are required",
-                },
-                maxLength: {
-                  value: 6,
-                  message: "Maximum 6 digits are allowed",
-                },
-              })}
-              type="password"
-              placeholder="Password"
-              className="w-full rounded-lg border border-gray-300 py-3 pl-12 pr-4 text-gray-700 outline-none transition focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200"
-            />
-
-            {errors.password && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.password.message}
-              </p>
-            )}
-          </div>
-
-          {/* Button */}
-          <button
-            type="submit"
-            className="w-full cursor-pointer rounded-lg bg-indigo-600 py-3 font-semibold text-white transition hover:bg-indigo-700"
-          >
-            Sign In
-          </button>
-
-          {/* Register */}
-          <p className="text-center text-sm text-gray-600">
-            Don't have an account?{" "}
-            <NavLink
-              className="font-semibold text-indigo-600 hover:underline"
-              to={"/register"}
-            >
-              Create One
-            </NavLink>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+            Thousands of products, lightning-fast delivery, and prices that make
+            your wallet happy.
           </p>
-        </form>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            ["20K+", "Products"],
+            ["50K+", "Users"],
+            ["4.9★", "Rating"],
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="
+          border border-white/10 
+          bg-white/5 
+          backdrop-blur-md
+          rounded-xl
+          p-4
+          text-center
+          "
+            >
+              <h3 className="text-lg font-bold text-indigo-600">{item[0]}</h3>
+
+              <p className="text-[10px] text-white uppercase mt-1">{item[1]}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider Line */}
+      <div
+        className="
+  hidden lg:flex
+  items-center
+  justify-center
+  "
+      >
+        <div
+          className="
+    h-full
+    w-px
+    bg-white
+    "
+        ></div>
+      </div>
+
+      {/* Right Side */}
+      <div
+        className="
+  w-full 
+  lg:w-1/2 
+  flex 
+  items-center 
+  justify-center
+  p-6
+  sm:p-10
+  "
+      >
+        <div
+          className="
+    w-full
+    max-w-md
+    rounded-3xl
+    border
+    border-white/10
+    bg-white/5
+    backdrop-blur-xl
+    p-8
+    sm:p-10
+    shadow-2xl
+    "
+        >
+          <h2 className="text-3xl font-bold">Sign in</h2>
+
+          <p className="text-sm text-gray-500 mt-2">
+            Enter your credentials to continue
+          </p>
+
+          <form onSubmit={handleSubmit(formSubmit)} className="mt-8 space-y-5">
+            {/* Email */}
+
+            <div>
+              <div className="relative">
+                <Mail
+                  size={18}
+                  className="
+absolute 
+left-4
+top-1/2
+-translate-y-1/2
+text-gray-500
+"
+                />
+
+                <input
+                  {...register("email", {
+                    required: "Email is required",
+                  })}
+                  type="email"
+                  placeholder="Email address"
+                  className="
+w-full
+rounded-xl
+bg-black/40
+border
+border-white/10
+py-3.5
+pl-12
+text-sm
+
+outline-none
+
+transition
+
+focus:border-indigo-600
+
+focus:ring-2
+
+focus:ring-indigo-600
+
+"
+                />
+              </div>
+
+              {errors.email && (
+                <p
+                  className="
+mt-2
+text-xs
+text-red-400
+bg-red-500/10
+border
+border-red-500/20
+rounded-lg
+px-3
+py-2
+"
+                >
+                  ⚠ {errors.email.message}
+                </p>
+              )}
+            </div>
+
+            {/* Password */}
+
+            <div>
+              <div className="relative">
+                <Lock
+                  size={18}
+                  className="
+absolute
+left-4
+top-1/2
+-translate-y-1/2
+text-gray-500
+"
+                />
+
+                <input
+                  {...register("password", {
+                    required: "Password is required",
+
+                    minLength: {
+                      value: 4,
+                      message: "Minimum 4 characters required",
+                    },
+
+                    maxLength: {
+                      value: 6,
+                      message: "Maximum 6 characters allowed",
+                    },
+                  })}
+                  type="password"
+                  placeholder="Password"
+                  className="
+w-full
+rounded-xl
+bg-black/40
+border
+border-white/10
+py-3.5
+pl-12
+
+outline-none
+
+transition
+
+focus:border-indigo-600
+
+focus:ring-2
+
+focus:ring-indigo-600
+
+"
+                />
+              </div>
+
+              {errors.password && (
+                <p
+                  className="
+mt-2
+text-xs
+text-red-400
+bg-red-500/10
+border
+border-red-500/20
+rounded-lg
+px-3
+py-2
+"
+                >
+                  ⚠ {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="
+w-full
+mt-3
+py-3.5
+rounded-xl
+bg-indigo-500
+text-white
+font-semibold
+hover:bg-indigo-600
+transition
+active:scale-95
+cursor-pointer
+shadow-lg
+shadow-[indigo-600]/20
+"
+            >
+              Sign in →
+            </button>
+
+            <p
+              className="
+text-center
+text-sm
+text-gray-500
+mt-6
+"
+            >
+              Don't have an account?
+              <NavLink
+                to="/register"
+                className="
+ml-2
+text-white
+font-medium
+hover:text-indigo-300
+transition
+"
+              >
+                Create one
+              </NavLink>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
