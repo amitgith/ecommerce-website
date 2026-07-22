@@ -58,7 +58,7 @@ const ProductCard = ({ product }) => {
           {product.category}
         </span>
 
-        <h2 className="mt-4 min-h-[56px] text-lg font-semibold leading-7 text-white line-clamp-2">
+        <h2 className="mt-4 min-h-14 text-lg font-semibold leading-7 text-white line-clamp-2">
           {product.title}
         </h2>
 
@@ -85,7 +85,7 @@ const ProductCard = ({ product }) => {
         <button
           onClick={handleAddToCart}
           disabled={isAdded}
-          className={`mt-6 flex w-full items-center justify-center gap-2 rounded-xl py-3 font-semibold transition-all duration-300 ${
+          className={`mt-6 flex w-full items-center cursor-pointer justify-center gap-2 rounded-xl py-3 font-semibold transition-all duration-300 ${
             isAdded
               ? "cursor-not-allowed bg-green-600 text-white"
               : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg"

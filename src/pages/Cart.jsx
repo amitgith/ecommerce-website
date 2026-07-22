@@ -72,16 +72,16 @@ const Cart = () => {
       >
         {/* Header */}
 
-        <div className="flex items-center justify-between border-b p-5">
+        <div className="flex items-center justify-between border-b p-5  bg-[#111111db] ">
           <div className="flex items-center gap-3">
             <ShoppingCart size={28} className="text-indigo-600" />
 
-            <h1 className="text-2xl font-bold">Shopping Cart</h1>
+            <h1 className="text-2xl font-bold text-white">Shopping Cart</h1>
           </div>
 
           <button
             onClick={() => setIsCartOpen(false)}
-            className="rounded-lg p-2 transition hover:bg-gray-100"
+            className="rounded-lg p-2 transition hover:bg-gray-100 text-white"
           >
             <X />
           </button>
@@ -89,14 +89,14 @@ const Cart = () => {
 
         {/* Body */}
 
-        <div className="h-[calc(100vh-220px)] overflow-y-auto p-5">
+        <div className="h-[calc(100vh-220px)] overflow-y-auto p-5 bg-black">
           {cartItems.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center">
-              <ShoppingCart size={70} className="text-gray-300" />
+              <ShoppingCart size={70} className="text-white" />
 
               <h2 className="mt-5 text-2xl font-bold">Your Cart is Empty</h2>
 
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-white">
                 Add products to start shopping.
               </p>
             </div>
@@ -113,7 +113,7 @@ const Cart = () => {
                     className="h-24 w-24 rounded-lg object-contain bg-gray-100 p-2"
                   />
 
-                  <div className="flex flex-1 flex-col justify-between">
+                  <div className="flex flex-1 flex-col justify-between text-white">
                     <div>
                       <h2 className="line-clamp-2 font-semibold">
                         {item.title}
