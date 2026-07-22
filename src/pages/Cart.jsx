@@ -5,6 +5,7 @@ import { MyStore } from "../context/MyContext";
 const Cart = () => {
   const { cartItems, isCartOpen, setIsCartOpen, setCartItems } =
     useContext(MyStore);
+  console.log("Cart Status:", isCartOpen);
 
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -65,8 +66,8 @@ const Cart = () => {
       {/* Drawer */}
 
       <div
-        className={`fixed top-0 left-0 z-50 h-screen w-full max-w-md bg-white shadow-2xl transition-transform duration-300 ${
-          isCartOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 z-50 h-screen w-full max-w-md bg-white shadow-2xl transition-transform duration-300 ${
+          isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}

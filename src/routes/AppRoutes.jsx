@@ -28,7 +28,6 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<ProductDetail />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
       </Route>
     </Routes>
   );

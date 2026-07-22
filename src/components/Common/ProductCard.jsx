@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { ShoppingCart, Star, Heart } from "lucide-react";
-import { NavLink, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { MyStore } from "../../context/MyContext";
 
 const ProductCard = ({ product }) => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
   const { cartItems, setCartItems, setIsCartOpen } = useContext(MyStore);
 
   const handleAddToCart = () => {
@@ -28,47 +29,49 @@ const ProductCard = ({ product }) => {
       ]);
     }
 
-    // Cart open ho jayega
     setIsCartOpen(true);
   };
 
   const isAdded = cartItems.some((item) => item.id === product.id);
 
   return (
-    <div className="overflow-hidden rounded-xl bg-white shadow-md transition hover:-translate-y-2 hover:shadow-xl">
+    <div className="group overflow-hidden rounded-2xl bg-[#0f0f0f] shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       {/* Image */}
       <div
         onClick={() => navigate(`/detail/${product.id}`)}
-        className="relative h-64 bg-gray-100 p-6 cursor-pointer"
+        className="relative flex h-60 sm:h-64 items-center justify-center overflow-hidden bg-gray-100 p-6 cursor-pointer"
       >
         <img
           src={product.image}
           alt={product.title}
-          className="h-full w-full object-contain"
+          className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
         />
 
-        <button className="absolute right-4 top-4 rounded-full bg-white p-2 shadow">
+        <button className="absolute top-4 right-4 rounded-full bg-white p-2 shadow-md transition hover:scale-110">
           <Heart size={18} />
         </button>
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-600">
+      <div className="flex flex-col p-5">
+        <span className="w-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium capitalize text-indigo-600">
           {product.category}
         </span>
 
-        <h2 className="mt-4 line-clamp-2 text-lg font-semibold text-gray-800">
+        <h2 className="mt-4 min-h-[56px] text-lg font-semibold leading-7 text-white line-clamp-2">
           {product.title}
         </h2>
 
+        {/* Rating */}
         <div className="mt-3 flex items-center justify-between">
           <div className="flex items-center gap-1">
             <Star size={16} className="fill-yellow-400 text-yellow-400" />
 
-            <span className="text-sm text-gray-600">{product.rating.rate}</span>
+            <span className="text-sm text-white font-medium">
+              {product.rating.rate}
+            </span>
 
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-gray-300">
               ({product.rating.count})
             </span>
           </div>
@@ -78,17 +81,17 @@ const ProductCard = ({ product }) => {
           </h3>
         </div>
 
+        {/* Button */}
         <button
           onClick={handleAddToCart}
           disabled={isAdded}
-          className={`mt-5 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-semibold text-white transition ${
+          className={`mt-6 flex w-full items-center justify-center gap-2 rounded-xl py-3 font-semibold transition-all duration-300 ${
             isAdded
-              ? "cursor-not-allowed bg-green-600"
-              : "bg-indigo-600 hover:bg-indigo-700"
+              ? "cursor-not-allowed bg-green-600 text-white"
+              : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg"
           }`}
         >
           <ShoppingCart size={18} />
-
           {isAdded ? "Added" : "Add to Cart"}
         </button>
       </div>

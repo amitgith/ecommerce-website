@@ -109,36 +109,36 @@ const Navbar = () => {
         <button
           onClick={() => setIsCartOpen(true)}
           className="
-          relative
-          cursor-pointer
-          "
+  relative
+  cursor-pointer
+  "
         >
           <ShoppingCart
             size={26}
             className="
-            text-white
-            hover:text-indigo-600
-            transition
-            "
+    text-white
+    hover:text-indigo-600
+    transition
+    "
           />
 
           {cartCount > 0 && (
             <span
               className="
-                absolute
-                -top-3
-                -right-3
-                flex
-                h-5
-                w-5
-                items-center
-                justify-center
-                rounded-full
-                bg-indigo-600
-                text-xs
-                font-bold
-                text-black
-                "
+        absolute
+        -top-3
+        -right-3
+        flex
+        h-5
+        w-5
+        items-center
+        justify-center
+        rounded-full
+        bg-indigo-600
+        text-xs
+        font-bold
+        text-black
+        "
             >
               {cartCount}
             </span>

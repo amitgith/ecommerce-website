@@ -57,16 +57,15 @@ const ShopByCategory = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-indigo-400 text-sm font-semibold uppercase tracking-widest">
+          <p className="text-indigo-400 text-xs font-semibold uppercase tracking-widest">
             Categories
           </p>
 
-          <h2 className="text-3xl font-bold text-white mt-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mt-2">
             Shop by Category
           </h2>
         </div>
@@ -76,13 +75,12 @@ const ShopByCategory = () => {
           className="hidden sm:flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition"
         >
           View All
-          <ArrowRight size={18} />
+          <ArrowRight size={17} />
         </button>
       </div>
 
-
       {/* Category Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {categories.map((category) => {
           const Icon = category.icon;
 
@@ -90,48 +88,64 @@ const ShopByCategory = () => {
             <div
               key={category.id}
               onClick={() => handleCategoryClick(category.value)}
-              className="group rounded-2xl bg-[#111111] p-6 flex flex-col items-center text-center cursor-pointer hover:border-indigo-400/40 hover:-translate-y-2 transition-all duration-300 border border-white"
+              className="
+              group
+              rounded-xl
+              bg-[#111111]
+              p-4
+              flex
+              flex-col
+              items-center
+              text-center
+              cursor-pointer
+              hover:border-indigo-400/40
+              hover:-translate-y-1
+              transition-all
+              duration-300
+              border
+              border-white
+              "
             >
-
               {/* Icon */}
               <div
-                className={`${category.bg} w-16 h-16 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition`}
+                className={`
+                ${category.bg}
+                w-12
+                h-12
+                rounded-xl
+                flex
+                items-center
+                justify-center
+                mb-4
+                group-hover:scale-110
+                transition
+                `}
               >
-                <Icon 
-                  className={category.color}
-                  size={30}
-                />
+                <Icon className={category.color} size={24} />
               </div>
 
-
               {/* Name */}
-              <h3 className="text-white font-semibold">
+              <h3 className="text-white font-semibold text-sm md:text-base">
                 {category.name}
               </h3>
 
-
               {/* Count */}
-              <p className="text-neutral-400 text-sm mt-2">
-                {category.count}
-              </p>
-
+              <p className="text-neutral-400 text-xs mt-1">{category.count}</p>
             </div>
           );
         })}
       </div>
 
-
       {/* Mobile View All Button */}
-      <div className="flex justify-center mt-8 sm:hidden">
+      <div className="flex justify-center mt-6 sm:hidden">
         <button
           onClick={handleViewAll}
           className="flex items-center gap-2 text-indigo-400 font-semibold"
         >
           View All
-          <ArrowRight size={18}/>
+          <ArrowRight size={17} />
         </button>
       </div>
-
     </section>
   );
 };
