@@ -5,6 +5,22 @@ import { NavLink } from "react-router";
 const WelcomeBanner = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+
+    if (hour >= 5 && hour < 12) {
+      return "Good Morning 👋";
+    } else if (hour >= 12 && hour < 17) {
+      return "Good Afternoon 👋";
+    } else if (hour >= 17 && hour < 24) {
+      return "Good Evening 👋";
+    } else {
+      return "Good Night 🌙";
+    }
+  };
+
+  const greeting = getGreeting();
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Hero Section */}
@@ -30,9 +46,9 @@ const WelcomeBanner = () => {
           {/* Left Side */}
 
           <div className="w-full lg:w-2/3">
-            <p className="flex items-center gap-2 text-indigo-400 font-semibold uppercase tracking-widest text-xs sm:text-sm mb-4">
+            <p className="flex items-center gap-2 text-indigo-400 font-semibold uppercase tracking-widest text-sm mb-4">
               <ShoppingBag size={16} />
-              Good Morning 👋
+              {greeting}
             </p>
 
             <h1

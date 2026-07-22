@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store } from "lucide-react";
 import { MyStore } from "../../context/MyContext";
@@ -10,19 +10,56 @@ const Navbar = () => {
 
   const { cartItems, setIsCartOpen } = useContext(MyStore);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  // Navbar Scroll Effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav
-      className="
+      className={`
       sticky top-0 z-50
-      flex items-center justify-between
-      bg-black
-      px-90
+
+      flex
+      flex-col
+      lg:flex-row
+      lg:items-center
+      lg:justify-between
+
+      px-4
+      sm:px-6
+      lg:px-90
+
       py-4
-      border-b border-white/30
+
+      gap-4
+
+      border-b
+      border-white/30
+
       shadow-md
-      "
+
+      transition-all
+      duration-300
+
+      ${scrolled ? "bg-black/40 backdrop-blur-xl" : "bg-black"}
+      `}
     >
       {/* Logo */}
 
@@ -46,8 +83,14 @@ const Navbar = () => {
         className="
         flex
         items-center
-        gap-10
+        justify-center
+
+        gap-5
+        sm:gap-8
+        lg:gap-10
+
         text-gray-300
+
         font-medium
         "
       >
@@ -85,60 +128,85 @@ const Navbar = () => {
         className="
         flex
         items-center
-        gap-5
+        justify-center
+
+        gap-3
+        sm:gap-5
+
         bg-white/10
-        border border-white/20
+
+        border
+        border-white/20
+
         rounded-xl
-        px-4
+
+        px-3
+        lg:px-4
+
         py-2
         "
       >
-        {/* User Name */}
+        {/* User */}
 
         <span
           className="
+          hidden
+          sm:block
+
           text-white
+
           font-medium
           "
         >
           Hi, {currentUser?.fullname}
         </span>
 
-        {/* Cart Button */}
+        {/* Cart */}
 
         <button
-          onClick={() => setIsCartOpen(true)}
+          onClick={() => setIsCartOpen((prev) => !prev)}
           className="
-  relative
-  cursor-pointer
-  "
+          relative
+          cursor-pointer
+          "
         >
           <ShoppingCart
             size={26}
             className="
-    text-white
-    hover:text-indigo-600
-    transition
-    "
+            text-white
+
+            hover:text-indigo-600
+
+            transition
+            "
           />
 
           {cartCount > 0 && (
             <span
               className="
-        absolute
-        -top-3
-        -right-3
-        flex
-        h-5
-        w-5
-        items-center
-        justify-center
-        rounded-full
-        bg-indigo-600
-        text-xs
-        font-bold
-        text-black
-        "
+                absolute
+
+                -top-3
+                -right-3
+
+                flex
+
+                h-5
+                w-5
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                bg-indigo-600
+
+                text-xs
+
+                font-bold
+
+                text-black
+                "
             >
               {cartCount}
             </span>
@@ -155,18 +223,28 @@ const Navbar = () => {
           className="
           flex
           items-center
+
           gap-2
+
           rounded-lg
+
           bg-red-500
-          px-4
+
+          px-3
+          lg:px-4
+
           py-2
+
           text-white
+
           transition
+
           hover:bg-red-600
           "
         >
           <LogOut size={18} />
-          Logout
+
+          <span className="hidden sm:block">Logout</span>
         </button>
       </div>
     </nav>

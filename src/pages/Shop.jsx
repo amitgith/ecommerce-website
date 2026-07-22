@@ -52,40 +52,147 @@ const Shop = () => {
     });
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-10 text-white">
-      <h1>All Products</h1>
-      <p>50 products found</p>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-white">
+      {/* Header */}
+      <div className="mb-8">
+        <h1
+          className="
+        text-3xl
+        sm:text-4xl
+        font-bold
+        text-white
+        "
+        >
+          All Products
+        </h1>
+
+        <p
+          className="
+        mt-2
+        text-sm
+        text-neutral-400
+        "
+        >
+          {filteredProducts.length} products found
+        </p>
+      </div>
+
       {/* Search + Filter + Sort */}
-      <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+      <div
+        className="
+      mb-10
+      flex
+      flex-col
+      gap-4
+
+      md:flex-row
+      md:items-center
+      md:justify-between
+      "
+      >
         {/* Search */}
+
         <input
           type="text"
           placeholder="Search products..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-lg border  border-gray-300 px-4 py-3 outline-none transition focus:border-indigo-600 md:w-80"
+          className="
+        w-full
+        md:w-80
+
+        rounded-xl
+
+        border
+        border-white/20
+
+        bg-[#111111]
+
+        px-4
+        py-3
+
+        text-white
+
+        placeholder:text-neutral-500
+
+        outline-none
+
+        transition
+
+        focus:border-indigo-500
+        "
         />
 
         {/* Category */}
+
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="rounded-lg text-white bg-black  border border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
+          className="
+        w-full
+        md:w-auto
+
+        rounded-xl
+
+        border
+        border-white/20
+
+        bg-[#111111]
+
+        px-4
+        py-3
+
+        text-white
+
+        outline-none
+
+        cursor-pointer
+
+        focus:border-indigo-500
+        "
         >
           <option value="all">All Categories</option>
+
           <option value="men's clothing">Men's Clothing</option>
+
           <option value="women's clothing">Women's Clothing</option>
+
           <option value="electronics">Electronics</option>
+
           <option value="jewelery">Jewelery</option>
         </select>
 
-        {/* Price Sort */}
+        {/* Sort */}
+
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="rounded-lg border text-white bg-black border-gray-300 px-4 py-3 outline-none focus:border-indigo-600"
+          className="
+        w-full
+        md:w-auto
+
+        rounded-xl
+
+        border
+        border-white/20
+
+        bg-[#111111]
+
+        px-4
+        py-3
+
+        text-white
+
+        outline-none
+
+        cursor-pointer
+
+        focus:border-indigo-500
+        "
         >
           <option value="default">Sort By Price</option>
+
           <option value="low-high">Price: Low to High</option>
 
           <option value="high-low">Price: High to Low</option>
@@ -93,13 +200,32 @@ const Shop = () => {
       </div>
 
       {/* Products */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+      <div
+        className="
+      grid
+
+      grid-cols-1
+      sm:grid-cols-2
+      lg:grid-cols-3
+      xl:grid-cols-4
+
+      gap-6
+      "
+      >
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))
         ) : (
-          <p className="col-span-full text-center text-lg text-gray-500">
+          <p
+            className="
+            col-span-full
+            text-center
+            text-lg
+            text-neutral-500
+            "
+          >
             No products found.
           </p>
         )}
