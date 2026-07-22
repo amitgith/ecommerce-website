@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
-import { Mail, Lock, ShoppingBag } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
@@ -22,9 +24,10 @@ const Login = () => {
 
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
+      toast.success("Login successful! Welcome back 👋");
       navigate("/");
     } else {
-      alert("Invalid email or password");
+      toast.error("Invalid email or password");
     }
 
     reset();
@@ -57,7 +60,7 @@ const Login = () => {
         lg:p-16
         relative
         overflow-hidden
-        min-h-[650px]
+        min-h-162.5
         lg:min-h-screen
         "
       >
@@ -293,7 +296,7 @@ const Login = () => {
                     required: "Email is required",
                   })}
                   type="email"
-                  placeholder="Email address"
+                  placeholder="john@example.com"
                   className="
                   w-full
                   rounded-xl
@@ -338,46 +341,59 @@ const Login = () => {
                 <Lock
                   size={18}
                   className="
-                  absolute
-                  left-4
-                  top-1/2
-                  -translate-y-1/2
-                  text-gray-500
-                  "
+      absolute
+      left-4
+      top-1/2
+      -translate-y-1/2
+      text-gray-500
+    "
                 />
 
                 <input
                   {...register("password", {
-                    required: "Password is required",
-
+                    required: "Password is Required",
                     minLength: {
-                      value: 4,
-                      message: "Minimum 4 characters required",
-                    },
-
-                    maxLength: {
                       value: 6,
-                      message: "Maximum 6 characters allowed",
+                      message: "Minimum 6 characters are required",
                     },
                   })}
-                  type="password"
-                  placeholder="Password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
                   className="
-                  w-full
-                  rounded-xl
-                  bg-black/40
-                  border
-                  border-white/10
-                  py-3.5
-                  pl-12
-                  text-sm
-                  outline-none
-                  transition
-                  focus:border-indigo-600
-                  focus:ring-2
-                  focus:ring-indigo-600
-                  "
+      w-full
+      rounded-xl
+      bg-black/40
+      border
+      border-white/10
+      py-3.5
+      pl-12
+      pr-12
+      text-sm
+      text-white
+      placeholder:text-gray-600
+      outline-none
+      transition
+      focus:border-indigo-400
+      focus:ring-2
+      focus:ring-indigo-400/20
+    "
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="
+      absolute
+      right-4
+      top-1/2
+      -translate-y-1/2
+      text-gray-500
+      hover:text-indigo-400
+      transition
+    "
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
 
               {errors.password && (

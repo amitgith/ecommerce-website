@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { User, Mail, Lock, ShoppingBag, Eye, EyeOff } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 import { useForm } from "react-hook-form";
 
@@ -65,7 +66,7 @@ const Register = () => {
 
       JSON.stringify(users),
     );
-
+    toast.success("Account created successfully! 🎉");
     reset();
 
     navigate("/login");
@@ -190,7 +191,7 @@ text-gray-500
                       message: "Maximum 20 characters allowed",
                     },
                   })}
-                  placeholder="Full name"
+                  placeholder="John Doe"
                   className="
 w-full
 rounded-xl
@@ -249,7 +250,7 @@ text-gray-500
                     required: "Email is Required",
                   })}
                   type="email"
-                  placeholder="Email address"
+                  placeholder="john@example.com"
                   className="
 w-full
 rounded-xl
@@ -315,7 +316,7 @@ text-gray-500
                     },
                   })}
                   type={showPassword ? "text" : "password"}
-                  placeholder="Password"
+                  placeholder="Create a strong password"
                   className="
 w-full
 rounded-xl
@@ -440,7 +441,7 @@ text-gray-500
                     },
                   })}
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm password"
+                  placeholder="Confirm your password"
                   className="
 w-full
 rounded-xl
@@ -496,11 +497,11 @@ mt-2
 w-full
 mt-4
 rounded-xl
-bg-indigo-400
+bg-indigo-500
 py-3.5
-text-black
+text-white
 font-semibold
-hover:bg-indigo-300
+hover:bg-indigo-600
 active:scale-95
 transition
 cursor-pointer
@@ -524,9 +525,9 @@ mt-6
                 to="/login"
                 className="
 ml-1
-text-indigo-400
+text-white
 font-semibold
-hover:text-indigo-300
+hover:text-indigo-400
 "
               >
                 Sign in

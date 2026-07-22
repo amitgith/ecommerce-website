@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { X, ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
 import { MyStore } from "../context/MyContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const Cart = () => {
   const { cartItems, isCartOpen, setIsCartOpen, setCartItems } =
@@ -46,8 +47,7 @@ const Cart = () => {
   };
 
   const handleCheckout = () => {
-    alert("🎉 Order Placed Successfully!");
-
+    toast.success("Order placed successfully! 🛍️");
     setCartItems([]);
 
     setIsCartOpen(false);
@@ -96,9 +96,7 @@ const Cart = () => {
 
               <h2 className="mt-5 text-2xl font-bold">Your Cart is Empty</h2>
 
-              <p className="mt-2 text-white">
-                Add products to start shopping.
-              </p>
+              <p className="mt-2 text-white">Add products to start shopping.</p>
             </div>
           ) : (
             cartItems.map((item) => (

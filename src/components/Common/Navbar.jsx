@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store } from "lucide-react";
 import { MyStore } from "../../context/MyContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -218,11 +219,13 @@ const Navbar = () => {
         <button
           onClick={() => {
             localStorage.removeItem("currentUser");
+            toast.success("You've been logged out successfully. 👋");
             navigate("/login");
           }}
           className="
           flex
           items-center
+          cursor-pointer
 
           gap-2
 
