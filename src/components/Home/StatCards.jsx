@@ -17,36 +17,35 @@ const StatCards = () => {
   const topProducts =
     shopsData?.filter((item) => item.rating?.rate >= 4.5).length || 0;
 
-  const categories = [
-    ...new Set(shopsData?.map((item) => item.category) || []),
-  ].length;
+  const categories = [...new Set(shopsData?.map((item) => item.category) || [])]
+    .length;
 
   const stats = [
     {
       title: "Cart Items",
       value: cartCount,
-      description: "Products currently in your cart.",
+      description: "Products in cart",
       icon: ShoppingCart,
       color: "indigo",
     },
     {
       title: "Cart Value",
       value: `$${cartValue}`,
-      description: "Ready for checkout.",
+      description: "Ready for checkout",
       icon: DollarSign,
       color: "indigo",
     },
     {
       title: "Top Products",
       value: topProducts,
-      description: "Highest rated products.",
+      description: "Highest rated",
       icon: Star,
       color: "yellow",
     },
     {
       title: "Categories",
       value: categories,
-      description: "Browse product categories.",
+      description: "Browse categories",
       icon: Grid2x2,
       color: "purple",
     },
@@ -58,11 +57,13 @@ const StatCards = () => {
       bg: "bg-indigo-500/10",
       border: "hover:border-indigo-500/40",
     },
+
     yellow: {
       icon: "text-yellow-400",
       bg: "bg-yellow-500/10",
       border: "hover:border-yellow-500/40",
     },
+
     purple: {
       icon: "text-purple-400",
       bg: "bg-purple-500/10",
@@ -71,16 +72,23 @@ const StatCards = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div
+        className="
+      grid
+      grid-cols-2
+      md:grid-cols-4
+      gap-4
+      "
+      >
+        {stats.map((stat) => {
+          const Icon = stat.icon;
+          const style = colors[stat.color];
 
-      {stats.map((stat) => {
-        const Icon = stat.icon;
-        const style = colors[stat.color];
-
-        return (
-          <div
-            key={stat.title}
-            className={`
+          return (
+            <div
+              key={stat.title}
+              className={`
             group
             rounded-xl
             border
@@ -93,13 +101,11 @@ const StatCards = () => {
             hover:shadow-lg
             ${style.border}
             `}
-          >
-
-            {/* Icon + Value */}
-            <div className="flex items-center justify-between">
-
-              <div
-                className={`
+            >
+              {/* Icon + Value */}
+              <div className="flex items-center justify-between">
+                <div
+                  className={`
                 ${style.bg}
                 w-12
                 h-12
@@ -110,39 +116,29 @@ const StatCards = () => {
                 group-hover:scale-110
                 transition
                 `}
-              >
-                <Icon
-                  className={style.icon}
-                  size={24}
-                />
+                >
+                  <Icon className={style.icon} size={24} />
+                </div>
+
+                <span className="text-2xl font-bold text-white">
+                  {stat.value}
+                </span>
               </div>
 
+              {/* Content */}
+              <div className="mt-4">
+                <h3 className="text-sm md:text-base font-semibold text-white">
+                  {stat.title}
+                </h3>
 
-              <span className="text-2xl font-bold text-white">
-                {stat.value}
-              </span>
-
+                <p className="mt-1 text-xs text-neutral-400">
+                  {stat.description}
+                </p>
+              </div>
             </div>
-
-
-            {/* Content */}
-            <div className="mt-4">
-
-              <h3 className="text-sm md:text-base font-semibold text-white">
-                {stat.title}
-              </h3>
-
-
-              <p className="mt-1 text-xs text-neutral-400">
-                {stat.description}
-              </p>
-
-            </div>
-
-          </div>
-        );
-      })}
-
+          );
+        })}
+      </div>
     </div>
   );
 };
