@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-center py-8 border-t border-white ">
+    <footer className="w-full bg-black text-center py-8 border-t border-white mt-25 ">
       <div className="flex flex-col items-center justify-center gap-1.5 px-4">
         {/* Brand Name */}
         <h3 className="text-2xl font-bold text-indigo-600 tracking-wide select-none">

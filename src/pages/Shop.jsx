@@ -52,7 +52,7 @@ const Shop = () => {
     });
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-white">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-white">
       {/* Header */}
       <div className="mb-8">
         <h1
@@ -86,6 +86,8 @@ const Shop = () => {
       flex-col
       gap-4
 
+      border border-white px-4 py-4 rounded-2xl
+
       md:flex-row
       md:items-center
       md:justify-between
@@ -100,7 +102,7 @@ const Shop = () => {
           onChange={(e) => setSearch(e.target.value)}
           className="
         w-full
-        md:w-80
+        md:w-300
 
         rounded-xl
 
@@ -226,7 +228,7 @@ const Shop = () => {
             text-neutral-500
             "
           >
-            No products found.
+            Product is loading...
           </p>
         )}
       </div>

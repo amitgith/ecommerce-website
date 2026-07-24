@@ -34,7 +34,7 @@ const FeatureBadges = () => {
       className="
       w-full
       bg-black
-      py-10
+      py-3
       px-4
       sm:px-6
     "

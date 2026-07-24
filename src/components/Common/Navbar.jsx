@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store } from "lucide-react";
 import { MyStore } from "../../context/MyContext";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,239 +16,209 @@ const Navbar = () => {
   // Navbar Scroll Effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Cart Count
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav
-      className={`
-      sticky top-0 z-50
-
-      flex
-      flex-col
-      lg:flex-row
-      lg:items-center
-      lg:justify-between
-
-      px-4
-      sm:px-6
-      lg:px-90
-
-      py-4
-
-      gap-4
-
-      border-b
-      border-white/30
-
-      shadow-md
-
-      transition-all
-      duration-300
-
-      ${scrolled ? "bg-black/40 backdrop-blur-xl" : "bg-black"}
-      `}
+      className={`sticky top-0 z-50 border-b border-white/20 transition-all duration-300 ${
+        scrolled ? "bg-black/40 backdrop-blur-xl" : "bg-black"
+      }`}
     >
-      {/* Logo */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 py-4">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          {/* ================= Logo ================= */}
 
-      <div className="flex items-center gap-2">
-        <Store size={30} className="text-indigo-600" />
+          <div className="flex items-center justify-center lg:justify-start gap-2">
+            <Store size={30} className="text-indigo-600" />
 
-        <h1
-          className="
-          text-2xl
-          font-bold
-          text-indigo-600
-          "
-        >
-          SkyMart
-        </h1>
-      </div>
+            <h1 className="text-2xl font-bold text-indigo-600">SkyMart</h1>
+          </div>
 
-      {/* Navigation */}
+          {/* ================= Navigation ================= */}
 
-      <div
-        className="
-        flex
-        items-center
-        justify-center
-
-        gap-5
-        sm:gap-8
-        lg:gap-10
-
-        text-gray-300
-
-        font-medium
-        "
-      >
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
-          }
-        >
-          Home
-        </NavLink>
-
-        <NavLink
-          to="/shop"
-          className={({ isActive }) =>
-            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
-          }
-        >
-          Shop
-        </NavLink>
-
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "text-indigo-600" : "hover:text-indigo-600 transition"
-          }
-        >
-          About
-        </NavLink>
-      </div>
-
-      {/* Right Section */}
-
-      <div
-        className="
-        flex
-        items-center
-        justify-center
-
-        gap-3
-        sm:gap-5
-
-        bg-white/10
-
-        border
-        border-white/20
-
-        rounded-xl
-
-        px-3
-        lg:px-4
-
-        py-2
-        "
-      >
-        {/* User */}
-
-        <span
-          className="
-          hidden
-          sm:block
-
-          text-white
-
-          font-medium
-          "
-        >
-          Hi, {currentUser?.fullname}
-        </span>
-
-        {/* Cart */}
-
-        <button
-          onClick={() => setIsCartOpen((prev) => !prev)}
-          className="
-          relative
-          cursor-pointer
-          "
-        >
-          <ShoppingCart
-            size={26}
-            className="
-            text-white
-
-            hover:text-indigo-600
-
-            transition
-            "
-          />
-
-          {cartCount > 0 && (
-            <span
-              className="
-                absolute
-
-                -top-3
-                -right-3
-
-                flex
-
-                h-5
-                w-5
-
-                items-center
-                justify-center
-
-                rounded-full
-
-                bg-indigo-600
-
-                text-xs
-
-                font-bold
-
-                text-black
-                "
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-gray-300 font-medium">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-indigo-600"
+                  : "transition hover:text-indigo-600"
+              }
             >
-              {cartCount}
-            </span>
-          )}
-        </button>
+              Home
+            </NavLink>
 
-        {/* Logout */}
+            <NavLink
+              to="/shop"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-indigo-600"
+                  : "transition hover:text-indigo-600"
+              }
+            >
+              Shop
+            </NavLink>
 
-        <button
-          onClick={() => {
-            localStorage.removeItem("currentUser");
-            toast.success("You've been logged out successfully. 👋");
-            navigate("/login");
-          }}
-          className="
-          flex
-          items-center
-          cursor-pointer
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-indigo-600"
+                  : "transition hover:text-indigo-600"
+              }
+            >
+              About
+            </NavLink>
+          </div>
 
-          gap-2
+          {/* ================= Right Section ================= */}
 
-          rounded-lg
+          <div
+            className="
+  flex
+  w-full
+  lg:w-auto
+  items-center
+  justify-center
+  lg:justify-end
+  gap-2
+  sm:gap-3
+  "
+          >
+            {/* User */}
 
-          bg-red-500
+            <div
+              className="
+    flex
+    items-center
+    gap-2
+    rounded-xl
+    border
+    border-white/20
+    bg-white/10
+    px-3
+    py-2
+    "
+            >
+              <div
+                className="
+      flex
+      h-6
+      w-6
+      items-center
+      justify-center
+      rounded-md
+      bg-indigo-500
+      text-xs
+      font-bold
+      text-white
+      "
+              >
+                {currentUser?.fullname?.charAt(0).toUpperCase()}
+              </div>
 
-          px-3
-          lg:px-4
+              <span
+                className="
+      hidden
+      sm:block
+      text-sm
+      font-medium
+      text-white
+      "
+              >
+                {currentUser?.fullname}
+              </span>
+            </div>
 
-          py-2
+            {/* Cart */}
 
-          text-white
+            <button
+              onClick={() => setIsCartOpen((prev) => !prev)}
+              className="
+    relative
+    flex
+    h-10
+    w-10
+    cursor-pointer
+    items-center
+    justify-center
+    rounded-xl
+    border
+    border-white/20
+    bg-white/10
+    "
+            >
+              <ShoppingCart
+                size={22}
+                className="
+      text-white
+      transition
+      hover:text-indigo-600
+      "
+              />
 
-          transition
+              {cartCount > 0 && (
+                <span
+                  className="
+        absolute
+        -right-1
+        -top-2
+        flex
+        h-5
+        w-5
+        items-center
+        justify-center
+        rounded-full
+        bg-indigo-600
+        text-xs
+        font-bold
+        text-black
+        "
+                >
+                  {cartCount}
+                </span>
+              )}
+            </button>
 
-          hover:bg-red-600
-          "
-        >
-          <LogOut size={18} />
+            {/* Logout */}
 
-          <span className="hidden sm:block">Logout</span>
-        </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem("currentUser");
+
+                toast.success("You've been logged out successfully. 👋");
+
+                navigate("/login");
+              }}
+              className="
+    flex
+    h-10
+    w-10
+    cursor-pointer
+    items-center
+    justify-center
+    rounded-xl
+    border
+    border-white/20
+    bg-white/10
+    text-white
+    transition
+    hover:bg-white/20
+    "
+            >
+              <LogOut size={18} />
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
   );

@@ -76,6 +76,7 @@ text-white
             </div>
 
             <button
+              onClick={() => navigate("/shop")}
               className="
   flex items-center gap-1
   bg-black
@@ -238,6 +239,7 @@ text-white
             </div>
 
             <button
+              onClick={() => navigate("/shop")}
               className="
   flex items-center gap-1
   bg-black

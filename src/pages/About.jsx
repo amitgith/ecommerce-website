@@ -9,9 +9,19 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router";
 import AboutSection from "../components/About/AboutSection";
+import AboutUs from "../components/About/Aboutus";
+import MeetTeam from "../components/About/MeetTeam";
+import CallToActionBanner from "../components/About/CallToActionBanner";
 
 const About = () => {
-  return <AboutSection />;
+  return (
+    <div>
+      <AboutSection />
+      <AboutUs />
+      <MeetTeam />
+      <CallToActionBanner />
+    </div>
+  );
 };
 
 export default About;

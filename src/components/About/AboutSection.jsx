@@ -2,51 +2,72 @@ import React from "react";
 import { Link } from "react-router";
 import { ShoppingBag, Package, Users, Star, Truck } from "lucide-react";
 
+const stats = [
+  {
+    icon: Package,
+    value: "20K+",
+    label: "Products",
+  },
+  {
+    icon: Users,
+    value: "50K+",
+    label: "Customers",
+  },
+  {
+    icon: Star,
+    value: "4.9",
+    label: "Rating",
+  },
+  {
+    icon: Truck,
+    value: "99%",
+    label: "On-Time Delivery",
+  },
+];
+
 const AboutSection = () => {
   return (
-    <section className="bg-[#0F0F0F] text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-black text-white py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Logo */}
         <Link
           to="/"
-          className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#CCFF00] text-black shadow-lg transition duration-300 hover:scale-105"
+          className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-lg transition-all duration-300 hover:scale-105"
         >
-          <ShoppingBag size={30} />
+          <ShoppingBag size={28} />
         </Link>
 
-        <h2 className="mt-8 text-4xl font-bold md:text-5xl">
-          About <span className="text-[#CCFF00]">SkyMart</span>
+        {/* Heading */}
+        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold">
+          About <span className="text-indigo-600">SkyMart</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-3xl text-gray-400 leading-8">
-          SkyMart is your trusted online shopping destination, offering premium
-          products with fast delivery, secure payments, and excellent customer
-          service.
+        {/* Description */}
+        <p className="mx-auto mt-4 max-w-3xl text-sm sm:text-base leading-7 sm:leading-6 text-gray-400">
+          SkyMart is a next-generation e-commerce platform built to make online
+          shopping fast, fair, and enjoyable — for everyone.
         </p>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-3xl border border-neutral-800 bg-[#181818] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#CCFF00]">
-            <Package className="mx-auto text-[#CCFF00]" size={32} />
-            <h3 className="mt-5 text-4xl font-bold">20K+</h3>
-            <p className="mt-2 text-gray-400">Products</p>
-          </div>
+        {/* Cards */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-15 justify-items-center">
+          {stats.map((item, index) => {
+            const Icon = item.icon;
 
-          <div className="rounded-3xl border border-neutral-800 bg-[#181818] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#CCFF00]">
-            <Users className="mx-auto text-[#CCFF00]" size={32} />
-            <h3 className="mt-5 text-4xl font-bold">50K+</h3>
-            <p className="mt-2 text-gray-400">Customers</p>
-          </div>
+            return (
+              <div
+                key={index}
+                className="w-full max-w-125 rounded-2xl border border-white bg-[#181818] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:border-indigo-600"
+              >
+                <Icon className="mx-auto text-indigo-600" size={26} />
 
-          <div className="rounded-3xl border border-neutral-800 bg-[#181818] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#CCFF00]">
-            <Star className="mx-auto text-[#CCFF00]" size={32} />
-            <h3 className="mt-5 text-4xl font-bold">4.9</h3>
-            <p className="mt-2 text-gray-400">Rating</p>
-          </div>
+                <h3 className="mt-4 text-2xl sm:text-3xl font-bold">
+                  {item.value}
+                </h3>
 
-          <div className="rounded-3xl border border-neutral-800 bg-[#181818] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#CCFF00]">
-            <Truck className="mx-auto text-[#CCFF00]" size={32} />
-            <h3 className="mt-5 text-4xl font-bold">99%</h3>
-            <p className="mt-2 text-gray-400">On-Time Delivery</p>
-          </div>
+                <p className="mt-2 text-sm text-gray-400">{item.label}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

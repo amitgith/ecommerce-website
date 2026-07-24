@@ -4,7 +4,7 @@ import { Navigate } from "react-router";
 const ProtectedRoute = ({ children }) => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (!currentUser) {
-    alert("Please login first");
+    // alert("Please login first");
     return <Navigate to={"/login"} replace />;
   }
   return children;
