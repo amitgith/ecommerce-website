@@ -153,6 +153,8 @@ flex
 items-center
 justify-center
 overflow-hidden
+cursor-pointer
+
 "
             >
               <img

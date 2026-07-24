@@ -61,13 +61,13 @@ const StatCards = () => {
     yellow: {
       icon: "text-yellow-400",
       bg: "bg-yellow-500/10",
-      border: "hover:border-yellow-500/40",
+      border: "hover:border-indigo-500/40",
     },
 
     purple: {
       icon: "text-purple-400",
       bg: "bg-purple-500/10",
-      border: "hover:border-purple-500/40",
+      border: "hover:border-indigo-500/40",
     },
   };
 
@@ -90,15 +90,17 @@ const StatCards = () => {
               key={stat.title}
               className={`
             group
-            rounded-xl
-            border
-            border-white
-            bg-[#111111]
-            p-4
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:shadow-lg
+  rounded-2xl
+  bg-[#111111]
+  border
+  border-white/10
+  p-4
+  transition-all
+  duration-300
+  hover:-translate-y-2
+  hover:border-indigo-500
+  hover:shadow-2xl
+  hover:shadow-indigo-600/30
             ${style.border}
             `}
             >

@@ -90,20 +90,17 @@ const ShopByCategory = () => {
               onClick={() => handleCategoryClick(category.value)}
               className="
               group
-              rounded-xl
-              bg-[#111111]
-              p-4
-              flex
-              flex-col
-              items-center
-              text-center
-              cursor-pointer
-              hover:border-indigo-400/40
-              hover:-translate-y-1
-              transition-all
-              duration-300
-              border
-              border-white
+  rounded-2xl
+  bg-[#111111]
+  border
+  border-white/10
+  p-4
+  transition-all
+  duration-300
+  hover:-translate-y-2
+  hover:border-indigo-500
+  hover:shadow-2xl
+  hover:shadow-indigo-600/30 cursor-pointer
               "
             >
               {/* Icon */}

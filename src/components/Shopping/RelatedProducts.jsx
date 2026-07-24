@@ -77,7 +77,7 @@ const RelatedProducts = ({ category, currentId }) => {
         <div
           className="
           flex
-          min-h-[200px]
+          min-h-50
           items-center
           justify-center
           text-white
@@ -145,14 +145,19 @@ const RelatedProducts = ({ category, currentId }) => {
                   className="
                 cursor-pointer
                 overflow-hidden
-                rounded-2xl
-                border
-                border-gray-700
-                bg-[#0F0F0F]
-                transition
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-xl
+                 group
+  rounded-2xl
+  bg-[#111111]
+  border
+  border-white/10
+  p-4
+  transition-all
+  duration-300
+  hover:-translate-y-2
+  hover:border-indigo-500
+  hover:shadow-2xl
+  hover:shadow-indigo-600/30
+                
                 "
                 >
                   {/* Image */}

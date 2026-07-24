@@ -35,7 +35,20 @@ const ProductCard = ({ product }) => {
   const isAdded = cartItems.some((item) => item.id === product.id);
 
   return (
-    <div className="group overflow-hidden rounded-2xl bg-[#0f0f0f] shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+    <div
+      className=" group
+  rounded-2xl
+  bg-[#111111]
+  border
+  border-white/10
+  p-4
+  transition-all
+  duration-300
+  hover:-translate-y-2
+  hover:border-indigo-500
+  hover:shadow-2xl
+  hover:shadow-indigo-600/30"
+    >
       {/* Image */}
       <div
         onClick={() => navigate(`/detail/${product.id}`)}

@@ -164,8 +164,8 @@ const Login = () => {
               key={index}
               className="
               border
-              border-white/10
-              bg-white/5
+              border-white
+              bg-[#0F0F0F]
               backdrop-blur-md
               rounded-xl
               p-3
@@ -176,7 +176,7 @@ const Login = () => {
               <h3
                 className="
                 text-sm
-                sm:text-lg
+                sm:text-xl
                 font-bold
                 text-indigo-600
                 "
@@ -346,6 +346,7 @@ const Login = () => {
       top-1/2
       -translate-y-1/2
       text-gray-500
+      
     "
                 />
 
@@ -373,9 +374,9 @@ const Login = () => {
       placeholder:text-gray-600
       outline-none
       transition
-      focus:border-indigo-400
-      focus:ring-2
-      focus:ring-indigo-400/20
+      focus:border-indigo-600
+                  focus:ring-2
+                  focus:ring-indigo-600
     "
                 />
 
@@ -455,7 +456,6 @@ const Login = () => {
                 ml-2
                 text-white
                 font-medium
-                hover:text-indigo-300
                 transition
                 "
               >
