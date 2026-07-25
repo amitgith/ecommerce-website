@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router";
 import AboutSection from "../components/About/AboutSection";
-import AboutUs from "../components/About/Aboutus";
+import AboutUs from "../components/About/AboutUs";
 import MeetTeam from "../components/About/MeetTeam";
 import CallToActionBanner from "../components/About/CallToActionBanner";
 
