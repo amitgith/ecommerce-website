@@ -32,14 +32,14 @@ const AboutSection = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-lg transition-all duration-300 hover:scale-105"
+          className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-amber-600 text-white shadow-lg transition-all duration-300 hover:scale-105"
         >
           <ShoppingBag size={28} />
         </Link>
 
         {/* Heading */}
         <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold">
-          About <span className="text-indigo-600">SkyMart</span>
+          About <span className="text-amber-600">SkyMart</span>
         </h2>
 
         {/* Description */}
@@ -56,9 +56,9 @@ const AboutSection = () => {
             return (
               <div
                 key={index}
-                className="w-full max-w-125 rounded-2xl border border-white bg-[#181818] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:border-indigo-600"
+                className="w-full max-w-125 rounded-2xl border border-white bg-[#181818] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:border-amber-600"
               >
-                <Icon className="mx-auto text-indigo-600" size={26} />
+                <Icon className="mx-auto text-amber-600" size={26} />
 
                 <h3 className="mt-4 text-2xl sm:text-3xl font-bold">
                   {item.value}

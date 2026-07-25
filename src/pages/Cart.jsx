@@ -126,7 +126,7 @@ const Cart = () => {
       gap-3
       "
           >
-            <ShoppingCart size={28} className="text-indigo-500" />
+            <ShoppingCart size={28} className="text-amber-500" />
 
             <h1
               className="
@@ -203,12 +203,12 @@ const Cart = () => {
                 className="
         mt-6
         rounded-xl
-        bg-indigo-600
+        bg-amber-600
         px-8
         py-3
         font-semibold
         text-white
-        hover:bg-indigo-700
+        hover:bg-amber-700
         "
               >
                 Browse Products
@@ -261,7 +261,7 @@ const Cart = () => {
           mt-2
           text-xl
           font-bold
-          text-indigo-500
+          text-amber-500
           "
                     >
                       ${item.price}
@@ -345,7 +345,7 @@ const Cart = () => {
             >
               <span>Total</span>
 
-              <span className="text-indigo-500">${totalPrice.toFixed(2)}</span>
+              <span className="text-amber-500">${totalPrice.toFixed(2)}</span>
             </div>
 
             <button
@@ -370,11 +370,11 @@ const Cart = () => {
               className="
       w-full
       rounded-xl
-      bg-indigo-600
+      bg-amber-600
       py-4
       font-semibold
       text-white
-      hover:bg-indigo-700 cursor-pointer
+      hover:bg-amber-700 cursor-pointer
       "
             >
               Proceed to Checkout

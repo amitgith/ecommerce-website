@@ -46,7 +46,7 @@ const WelcomeBanner = () => {
           {/* Left Side */}
 
           <div className="w-full lg:w-2/3">
-            <p className="flex items-center gap-2 text-indigo-400 font-semibold uppercase tracking-widest text-sm mb-4">
+            <p className="flex items-center gap-2 text-amber-400 font-semibold uppercase tracking-widest text-sm mb-4">
               <ShoppingBag size={16} />
               {greeting}
             </p>
@@ -63,7 +63,7 @@ const WelcomeBanner = () => {
             >
               Welcome Back,
               <br />
-              <span className="text-indigo-400">{currentUser?.fullname}</span>
+              <span className="text-amber-400">{currentUser?.fullname}</span>
             </h1>
 
             <p
@@ -88,7 +88,7 @@ const WelcomeBanner = () => {
                   className="
                   w-full
                   sm:w-auto
-                  bg-indigo-400
+                  bg-amber-400
                   cursor-pointer
                   text-black
                   px-6
@@ -99,7 +99,7 @@ const WelcomeBanner = () => {
                   items-center
                   justify-center
                   gap-2
-                  hover:bg-indigo-300
+                  hover:bg-amber-300
                   duration-300
                   "
                 >
@@ -151,8 +151,8 @@ const WelcomeBanner = () => {
               lg:w-45
               rounded-2xl
               border
-              border-indigo-400/20
-              bg-indigo-400/5
+              border-amber-400/20
+              bg-amber-400/5
               p-4
               sm:p-5
               text-center
@@ -163,7 +163,7 @@ const WelcomeBanner = () => {
               text-3xl
               sm:text-4xl
               font-bold
-              text-indigo-400
+              text-amber-400
               "
               >
                 20+

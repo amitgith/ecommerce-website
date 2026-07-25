@@ -80,7 +80,7 @@ text-white
               className="
   flex items-center gap-1
   bg-black
-  text-indigo-400
+  text-amber-400
   px-4 py-2
   rounded-full cursor-pointer
   text-xs
@@ -174,7 +174,7 @@ text-neutral-600
 
                 <span
                   className="
-text-indigo-600
+text-amber-600
 font-bold
 text-sm
 "
@@ -213,7 +213,7 @@ gap-3
             >
               <div
                 className="
-bg-indigo-400/20
+bg-amber-400/20
 p-2
 rounded-xl
 "
@@ -221,8 +221,8 @@ rounded-xl
                 <Zap
                   size={22}
                   className="
-text-indigo-500
-fill-indigo-500
+text-amber-500
+fill-amber-500
 "
                 />
               </div>
@@ -243,7 +243,7 @@ text-white
               className="
   flex items-center gap-1
   bg-black
-  text-indigo-400
+  text-amber-400
   px-4 py-2
   rounded-full
   text-xs
@@ -321,7 +321,7 @@ mt-1
 
                 <span
                   className="
-text-indigo-600
+text-amber-600
 font-bold
 text-sm
 "

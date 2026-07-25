@@ -38,9 +38,9 @@ const Navbar = () => {
           {/* ================= Logo ================= */}
 
           <div className="flex items-center justify-center lg:justify-start gap-2">
-            <Store size={30} className="text-indigo-600" />
+            <Store size={30} className="text-amber-600" />
 
-            <h1 className="text-2xl font-bold text-indigo-600">SkyMart</h1>
+            <h1 className="text-2xl font-bold text-amber-600">SkyMart</h1>
           </div>
 
           {/* ================= Navigation ================= */}
@@ -49,9 +49,7 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive
-                  ? "text-indigo-600"
-                  : "transition hover:text-indigo-600"
+                isActive ? "text-amber-600" : "transition hover:text-amber-600"
               }
             >
               Home
@@ -60,9 +58,7 @@ const Navbar = () => {
             <NavLink
               to="/shop"
               className={({ isActive }) =>
-                isActive
-                  ? "text-indigo-600"
-                  : "transition hover:text-indigo-600"
+                isActive ? "text-amber-600" : "transition hover:text-amber-600"
               }
             >
               Shop
@@ -71,9 +67,7 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive
-                  ? "text-indigo-600"
-                  : "transition hover:text-indigo-600"
+                isActive ? "text-amber-600" : "transition hover:text-amber-600"
               }
             >
               About
@@ -117,7 +111,7 @@ const Navbar = () => {
       items-center
       justify-center
       rounded-md
-      bg-indigo-500
+      bg-amber-500
       text-xs
       font-bold
       text-white
@@ -162,7 +156,7 @@ const Navbar = () => {
                 className="
       text-white
       transition
-      hover:text-indigo-600
+      hover:text-amber-600
       "
               />
 
@@ -178,7 +172,7 @@ const Navbar = () => {
         items-center
         justify-center
         rounded-full
-        bg-indigo-600
+        bg-amber-600
         text-xs
         font-bold
         text-black

@@ -100,18 +100,18 @@ text-gray-500
 overflow-hidden
 "
         >
-          <NavLink to="/" className="hover:text-indigo-600">
+          <NavLink to="/" className="hover:text-amber-600">
             Home /
           </NavLink>
 
-          <NavLink to="/shop" className="ml-1 hover:text-indigo-600">
+          <NavLink to="/shop" className="ml-1 hover:text-amber-600">
             Shop /
           </NavLink>
 
           <span
             className="
 ml-1
-text-indigo-600
+text-amber-600
 font-semibold
 capitalize
 "
@@ -185,14 +185,14 @@ justify-center
               className="
 w-fit
 rounded-full
-bg-indigo-100
+bg-amber-100
 px-4
 py-1
 text-sm
 sm:text-base
 font-semibold
 capitalize
-text-indigo-600
+text-amber-600
 "
             >
               {singleProductData.category}
@@ -253,7 +253,7 @@ mt-3
 text-3xl
 sm:text-4xl
 font-bold
-text-indigo-600
+text-amber-600
 "
             >
               ${singleProductData.price}
@@ -279,7 +279,7 @@ text-white
 mt-2
 text-left
 font-semibold
-text-indigo-500
+text-amber-500
 "
             >
               {showMore ? "Read Less" : "Read More"}
@@ -310,7 +310,7 @@ py-3
 font-semibold
 text-white
 
-${isAdded ? "bg-green-600" : "bg-indigo-600 hover:bg-indigo-700"}
+${isAdded ? "bg-green-600" : "bg-amber-600 hover:bg-amber-700"}
 
 `}
               >
@@ -359,7 +359,7 @@ text-center
 text-white
 "
               >
-                <Truck className="mx-auto text-indigo-600" />
+                <Truck className="mx-auto text-amber-600" />
 
                 <h3 className="mt-2 font-semibold">Free Delivery</h3>
 
@@ -377,7 +377,7 @@ text-center
 text-white
 "
               >
-                <ShieldCheck className="mx-auto text-indigo-600" />
+                <ShieldCheck className="mx-auto text-amber-600" />
 
                 <h3 className="mt-2 font-semibold">Secure Payment</h3>
 
@@ -395,7 +395,7 @@ text-center
 text-white
 "
               >
-                <RotateCcw className="mx-auto text-indigo-600" />
+                <RotateCcw className="mx-auto text-amber-600" />
 
                 <h3 className="mt-2 font-semibold">Easy Returns</h3>
 
@@ -427,8 +427,9 @@ justify-center
 gap-2
 rounded-xl
 border
-border-indigo-600
-bg-gray-700
+border-amber-600
+bg-amber-500
+hover:bg-amber-600
 py-3
 font-semibold
 text-white
@@ -451,7 +452,7 @@ items-center
 justify-center
 gap-2
 rounded-xl
-bg-indigo-600
+bg-amber-600
 py-3
 font-semibold
 text-white cursor-pointer

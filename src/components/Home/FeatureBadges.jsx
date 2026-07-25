@@ -8,8 +8,8 @@ const FeatureBadges = () => {
       icon: Zap,
       title: "Fast Delivery",
       desc: "Same-day on select items",
-      iconColor: "text-indigo-400",
-      bg: "bg-indigo-400/10",
+      iconColor: "text-amber-400",
+      bg: "bg-amber-400/10",
     },
     {
       id: 2,
@@ -66,7 +66,7 @@ const FeatureBadges = () => {
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-indigo-400/30
+                  hover:border-amber-400/30
                   hover:shadow-lg border border-white
                 "
             >

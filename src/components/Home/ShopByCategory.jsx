@@ -23,8 +23,8 @@ const ShopByCategory = () => {
       value: "men's clothing",
       count: "Products",
       icon: Shirt,
-      color: "text-indigo-400",
-      bg: "bg-indigo-500/10",
+      color: "text-amber-400",
+      bg: "bg-amber-500/10",
     },
     {
       id: 3,
@@ -61,7 +61,7 @@ const ShopByCategory = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-indigo-400 text-xs font-semibold uppercase tracking-widest">
+          <p className="text-amber-400 text-xs font-semibold uppercase tracking-widest">
             Categories
           </p>
 
@@ -72,7 +72,7 @@ const ShopByCategory = () => {
 
         <button
           onClick={handleViewAll}
-          className="hidden sm:flex items-center gap-2 text-indigo-400 font-semibold hover:text-indigo-300 transition"
+          className="hidden sm:flex items-center gap-2 text-amber-400 font-semibold hover:text-amber-300 transition"
         >
           View All
           <ArrowRight size={17} />
@@ -98,9 +98,9 @@ const ShopByCategory = () => {
   transition-all
   duration-300
   hover:-translate-y-2
-  hover:border-indigo-500
+  hover:border-amber-500
   hover:shadow-2xl
-  hover:shadow-indigo-600/30 cursor-pointer
+  hover:shadow-amber-600/30 cursor-pointer
               "
             >
               {/* Icon */}
@@ -137,7 +137,7 @@ const ShopByCategory = () => {
       <div className="flex justify-center mt-6 sm:hidden">
         <button
           onClick={handleViewAll}
-          className="flex items-center gap-2 text-indigo-400 font-semibold"
+          className="flex items-center gap-2 text-amber-400 font-semibold"
         >
           View All
           <ArrowRight size={17} />

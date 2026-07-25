@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Amit Kumar Sharma",
     role: "Founder & CEO",
     avatar: "A",
-    bg: "bg-indigo-400",
+    bg: "bg-amber-400",
     text: "text-black",
   },
   {
@@ -51,7 +51,7 @@ const MeetTeam = () => {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="group rounded-3xl border border-white bg-[#0F0F0F] p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-indigo-600 hover:shadow-lg"
+              className="group rounded-3xl border border-white bg-[#0F0F0F] p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-amber-600 hover:shadow-lg"
             >
               {/* Avatar */}
               <div

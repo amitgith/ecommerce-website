@@ -102,7 +102,7 @@ mb-8
 h-10
 w-10
 rounded-xl
-bg-indigo-400
+bg-amber-400
 flex
 items-center
 justify-center
@@ -119,7 +119,7 @@ text-white
 "
           >
             Sky
-            <span className="text-indigo-400">Mart</span>
+            <span className="text-amber-400">Mart</span>
           </span>
         </div>
 
@@ -202,9 +202,9 @@ py-3.5
 pl-12
 text-white
 outline-none
- focus:border-indigo-600
+ focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
 "
                 />
               </div>
@@ -263,9 +263,9 @@ py-3.5
 pl-12
 text-white
 outline-none
- focus:border-indigo-600
+ focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
 "
                 />
               </div>
@@ -332,9 +332,9 @@ pl-12
 pr-12
 text-white
 outline-none
- focus:border-indigo-600
+ focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
 "
                 />
 
@@ -459,9 +459,9 @@ pl-12
 pr-12
 text-white
 outline-none
- focus:border-indigo-600
+ focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
 "
                 />
 
@@ -505,11 +505,11 @@ mt-2
 w-full
 mt-4
 rounded-xl
-bg-indigo-500
+bg-amber-500
 py-3.5
 text-white
 font-semibold
-hover:bg-indigo-600
+hover:bg-amber-600
 active:scale-95
 transition
 cursor-pointer

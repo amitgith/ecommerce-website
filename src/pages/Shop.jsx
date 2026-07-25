@@ -122,7 +122,7 @@ const Shop = () => {
 
         transition
 
-        focus:border-indigo-500
+        focus:border-amber-500
         "
         />
 
@@ -151,7 +151,7 @@ const Shop = () => {
 
         cursor-pointer
 
-        focus:border-indigo-500
+        focus:border-amber-500
         "
         >
           <option value="all">All Categories</option>
@@ -190,7 +190,7 @@ const Shop = () => {
 
         cursor-pointer
 
-        focus:border-indigo-500
+        focus:border-amber-500
         "
         >
           <option value="default">Sort By Price</option>

@@ -75,7 +75,7 @@ const Login = () => {
             items-center
             justify-center
             rounded-xl
-            bg-indigo-600
+            bg-amber-600
             "
           >
             <ShoppingBag size={20} className="text-black" />
@@ -108,7 +108,7 @@ const Login = () => {
             text-xs
             font-semibold
             tracking-widest
-            text-indigo-400
+            text-amber-400
             uppercase
             "
           >
@@ -127,7 +127,7 @@ const Login = () => {
           >
             Shop the future.
             <br />
-            <span className="text-indigo-600">Today.</span>
+            <span className="text-amber-600">Today.</span>
           </h1>
 
           <p
@@ -178,7 +178,7 @@ const Login = () => {
                 text-sm
                 sm:text-xl
                 font-bold
-                text-indigo-600
+                text-amber-600
                 "
               >
                 {item[0]}
@@ -308,9 +308,9 @@ const Login = () => {
                   text-sm
                   outline-none
                   transition
-                  focus:border-indigo-600
+                  focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
                   "
                 />
               </div>
@@ -374,9 +374,9 @@ const Login = () => {
       placeholder:text-gray-600
       outline-none
       transition
-      focus:border-indigo-600
+      focus:border-amber-600
                   focus:ring-2
-                  focus:ring-indigo-600
+                  focus:ring-amber-600
     "
                 />
 
@@ -389,7 +389,7 @@ const Login = () => {
       top-1/2
       -translate-y-1/2
       text-gray-500
-      hover:text-indigo-400
+      hover:text-amber-400
       transition
     "
                 >
@@ -425,15 +425,15 @@ const Login = () => {
               mt-3
               py-3.5
               rounded-xl
-              bg-indigo-500
+              bg-amber-500
               text-white
               font-semibold
-              hover:bg-indigo-600
+              hover:bg-amber-600
               transition
               active:scale-95
               cursor-pointer
               shadow-lg
-              shadow-[indigo-600]/20
+              shadow-[amber-600]/20
               "
             >
               Sign in →

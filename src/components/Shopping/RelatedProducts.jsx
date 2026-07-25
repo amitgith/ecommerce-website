@@ -154,9 +154,9 @@ const RelatedProducts = ({ category, currentId }) => {
   transition-all
   duration-300
   hover:-translate-y-2
-  hover:border-indigo-500
+  hover:border-amber-500
   hover:shadow-2xl
-  hover:shadow-indigo-600/30
+  hover:shadow-amber-600/30
                 
                 "
                 >
@@ -197,13 +197,13 @@ const RelatedProducts = ({ category, currentId }) => {
                       className="
                     inline-block
                     rounded-full
-                    bg-indigo-100
+                    bg-amber-100
                     px-3
                     py-1
                     text-xs
                     font-semibold
                     capitalize
-                    text-indigo-600
+                    text-amber-600
                     "
                     >
                       {product.category}
@@ -267,7 +267,7 @@ const RelatedProducts = ({ category, currentId }) => {
                         className="
                       text-2xl
                       font-bold
-                      text-indigo-500
+                      text-amber-500
                       "
                       >
                         ${product.price}
@@ -288,7 +288,7 @@ const RelatedProducts = ({ category, currentId }) => {
                       ${
                         isAdded
                           ? "bg-green-600"
-                          : "bg-indigo-600 hover:bg-indigo-700"
+                          : "bg-amber-600 hover:bg-amber-700"
                       }
                       `}
                       >

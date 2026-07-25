@@ -26,14 +26,14 @@ const StatCards = () => {
       value: cartCount,
       description: "Products in cart",
       icon: ShoppingCart,
-      color: "indigo",
+      color: "amber",
     },
     {
       title: "Cart Value",
       value: `$${cartValue}`,
       description: "Ready for checkout",
       icon: DollarSign,
-      color: "indigo",
+      color: "amber",
     },
     {
       title: "Top Products",
@@ -52,22 +52,22 @@ const StatCards = () => {
   ];
 
   const colors = {
-    indigo: {
-      icon: "text-indigo-400",
-      bg: "bg-indigo-500/10",
-      border: "hover:border-indigo-500/40",
+    amber: {
+      icon: "text-amber-400",
+      bg: "bg-amber-500/10",
+      border: "hover:border-amber-500/40",
     },
 
     yellow: {
       icon: "text-yellow-400",
       bg: "bg-yellow-500/10",
-      border: "hover:border-indigo-500/40",
+      border: "hover:border-amber-500/40",
     },
 
     purple: {
       icon: "text-purple-400",
       bg: "bg-purple-500/10",
-      border: "hover:border-indigo-500/40",
+      border: "hover:border-amber-500/40",
     },
   };
 
@@ -98,9 +98,9 @@ const StatCards = () => {
   transition-all
   duration-300
   hover:-translate-y-2
-  hover:border-indigo-500
+  hover:border-amber-500
   hover:shadow-2xl
-  hover:shadow-indigo-600/30
+  hover:shadow-amber-600/30
             ${style.border}
             `}
             >

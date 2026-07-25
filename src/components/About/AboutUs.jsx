@@ -4,7 +4,7 @@ const features = [
   {
     title: "Trust",
     icon: ShieldCheck,
-    color: "text-indigo-500",
+    color: "text-amber500",
     desc: "Every product is verified for quality and authenticity before listing.",
   },
   {
@@ -16,7 +16,7 @@ const features = [
   {
     title: "Community",
     icon: Heart,
-    color: "text-indigo-500",
+    color: "text-amber500",
     desc: "Built around real customer feedback—not just business metrics.",
   },
   {
@@ -69,7 +69,7 @@ const AboutUs = () => {
           return (
             <div
               key={index}
-              className="group rounded-3xl border border-white bg-[#0F0F0F] p-5 sm:p-6 lg:p-7 transition-all duration-300 hover:-translate-y-2 hover:border-indigo-600"
+              className="group rounded-3xl border border-white bg-[#0F0F0F] p-5 sm:p-6 lg:p-7 transition-all duration-300 hover:-translate-y-2 hover:border-amber600"
             >
               <div className="flex items-start gap-4">
                 {/* Icon */}

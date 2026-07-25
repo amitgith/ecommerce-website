@@ -45,9 +45,9 @@ const ProductCard = ({ product }) => {
   transition-all
   duration-300
   hover:-translate-y-2
-  hover:border-indigo-500
+  hover:border-amber-500
   hover:shadow-2xl
-  hover:shadow-indigo-600/30"
+  hover:shadow-amber-600/30"
     >
       {/* Image */}
       <div
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
 
       {/* Content */}
       <div className="flex flex-col p-5">
-        <span className="w-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium capitalize text-indigo-600">
+        <span className="w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-medium capitalize text-amber-600">
           {product.category}
         </span>
 
@@ -89,7 +89,7 @@ const ProductCard = ({ product }) => {
             </span>
           </div>
 
-          <h3 className="text-2xl font-bold text-indigo-600">
+          <h3 className="text-2xl font-bold text-amber-600">
             ${product.price}
           </h3>
         </div>
@@ -101,7 +101,7 @@ const ProductCard = ({ product }) => {
           className={`mt-6 flex w-full items-center cursor-pointer justify-center gap-2 rounded-xl py-3 font-semibold transition-all duration-300 ${
             isAdded
               ? "cursor-not-allowed bg-green-600 text-white"
-              : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg"
+              : "bg-amber-600 text-white hover:bg-amber-700 hover:shadow-lg"
           }`}
         >
           <ShoppingCart size={18} />

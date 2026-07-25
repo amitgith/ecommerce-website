@@ -16,7 +16,7 @@ const CallToActionBanner = () => {
 
         <button
           onClick={() => navigate("/shop")}
-          className="mt-8 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm sm:text-base cursor-pointer font-semibold text-white transition-all duration-300 hover:scale-105 hover:opacity-90 active:scale-95"
+          className="mt-8 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-amber-600 px-6 py-3 text-sm sm:text-base cursor-pointer font-semibold text-white transition-all duration-300 hover:scale-105 hover:opacity-90 active:scale-95"
         >
           Browse Products
           <ArrowRight className="h-5 w-5" />
