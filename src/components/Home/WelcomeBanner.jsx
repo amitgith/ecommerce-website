@@ -19,11 +19,18 @@ const WelcomeBanner = () => {
     }
   };
 
-  const greeting = getGreeting();
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8  ">
-      {/* Hero Section */}
+    <div
+      className="
+    max-w-7xl
+    mx-auto
+    px-4
+    sm:px-6
+    lg:px-8
+    py-6
+    sm:py-8
+    "
+    >
       <div
         className="
         relative
@@ -34,7 +41,7 @@ const WelcomeBanner = () => {
         sm:p-8
         lg:p-12
         border
-        border-white
+        border-white/20
         "
         style={{
           backgroundImage:
@@ -42,19 +49,51 @@ const WelcomeBanner = () => {
           backgroundSize: "24px 24px",
         }}
       >
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Left Side */}
+        <div
+          className="
+          flex
+          flex-col
+          lg:flex-row
+          items-center
+          justify-between
+          gap-8
+          "
+        >
+          {/* LEFT CONTENT */}
 
-          <div className="w-full lg:w-2/3">
-            <p className="flex items-center gap-2 text-amber-400 font-semibold uppercase tracking-widest text-sm mb-4">
+          <div
+            className="
+            w-full
+            lg:w-2/3
+            text-center
+            lg:text-left
+            "
+          >
+            <p
+              className="
+              flex
+              justify-center
+              lg:justify-start
+              items-center
+              gap-2
+              text-amber-400
+              font-semibold
+              uppercase
+              tracking-widest
+              text-xs
+              sm:text-sm
+              mb-4
+              "
+            >
               <ShoppingBag size={16} />
-              {greeting}
+              {getGreeting()}
             </p>
 
             <h1
               className="
               text-3xl
               sm:text-4xl
+              md:text-5xl
               lg:text-6xl
               font-bold
               text-white
@@ -68,39 +107,51 @@ const WelcomeBanner = () => {
 
             <p
               className="
-            mt-5
-            max-w-xl
-            text-neutral-400
-            text-sm
-            sm:text-base
-            leading-7
-            "
+              mt-5
+              mx-auto
+              lg:mx-0
+              max-w-xl
+              text-neutral-400
+              text-sm
+              sm:text-base
+              leading-7
+              "
             >
               Discover today's best products from Electronics, Fashion,
               Jewellery and more. Enjoy premium quality with exciting offers.
             </p>
 
-            {/* Buttons */}
+            {/* BUTTONS */}
 
-            <div className="mt-7 flex flex-col sm:flex-row gap-4">
+            <div
+              className="
+              mt-7
+              flex
+              flex-col
+              sm:flex-row
+              justify-center
+              lg:justify-start
+              gap-4
+              "
+            >
               <NavLink to="/shop">
                 <button
                   className="
                   w-full
                   sm:w-auto
-                  bg-amber-400
-                  cursor-pointer
-                  text-black
                   px-6
                   py-3
                   rounded-full
+                  bg-amber-400
+                  text-black
                   font-semibold
                   flex
                   items-center
                   justify-center
                   gap-2
                   hover:bg-amber-300
-                  duration-300
+                  transition
+                  cursor-pointer
                   "
                 >
                   Shop Now
@@ -113,15 +164,15 @@ const WelcomeBanner = () => {
                   className="
                   w-full
                   sm:w-auto
-                  border
-                  cursor-pointer
-                  border-neutral-700
-                  text-white
                   px-6
                   py-3
                   rounded-full
+                  border
+                  border-neutral-700
+                  text-white
                   hover:bg-neutral-900
-                  duration-300
+                  transition
+                  cursor-pointer
                   "
                 >
                   View All Products
@@ -130,25 +181,25 @@ const WelcomeBanner = () => {
             </div>
           </div>
 
-          {/* Right Side */}
+          {/* RIGHT CARDS */}
 
           <div
             className="
-            grid
-            grid-cols-2
-            lg:grid-cols-1
-            gap-3
+            flex
+            flex-row
+            lg:flex-col
+            justify-center
+            gap-4
             w-full
-            sm:w-auto
+            lg:w-auto
             "
           >
-            {/* Products Card */}
+            {/* Products */}
 
             <div
               className="
-              w-full
-              sm:w-35
-              lg:w-45
+              flex-1
+              lg:w-44
               rounded-2xl
               border
               border-amber-400/20
@@ -160,36 +211,35 @@ const WelcomeBanner = () => {
             >
               <h2
                 className="
-              text-3xl
-              sm:text-4xl
-              font-bold
-              text-amber-400
-              "
+                text-3xl
+                sm:text-4xl
+                font-bold
+                text-amber-400
+                "
               >
                 20+
               </h2>
 
               <p
                 className="
-              text-[10px]
-              sm:text-xs
-              text-neutral-400
-              uppercase
-              tracking-wider
-              mt-2
-              "
+                mt-2
+                text-[10px]
+                sm:text-xs
+                uppercase
+                tracking-wider
+                text-neutral-400
+                "
               >
                 Products
               </p>
             </div>
 
-            {/* Delivery Card */}
+            {/* Delivery */}
 
             <div
               className="
-              w-full
-              sm:w-35
-              lg:w-45
+              flex-1
+              lg:w-44
               rounded-2xl
               border
               border-neutral-700
@@ -201,24 +251,24 @@ const WelcomeBanner = () => {
             >
               <h2
                 className="
-              text-2xl
-              sm:text-3xl
-              font-bold
-              text-white
-              "
+                text-2xl
+                sm:text-3xl
+                font-bold
+                text-white
+                "
               >
                 Free
               </h2>
 
               <p
                 className="
-              text-[10px]
-              sm:text-xs
-              text-neutral-400
-              uppercase
-              tracking-wider
-              mt-2
-              "
+                mt-2
+                text-[10px]
+                sm:text-xs
+                uppercase
+                tracking-wider
+                text-neutral-400
+                "
               >
                 Delivery ₹999+
               </p>
