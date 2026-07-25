@@ -30,93 +30,60 @@ const FeatureBadges = () => {
   ];
 
   return (
-    <section
-      className="
-      w-full
-      bg-black
-      py-3
-      px-4
-      sm:px-6
-    "
-    >
-      <div
-        className="
-        max-w-7xl
-        mx-auto
-        grid
-        grid-cols-1
-        md:grid-cols-3
-        gap-5 
-      "
-      >
-        {badges.map((badge) => {
-          const Icon = badge.icon;
+    <section className="w-full bg-black py-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {badges.map((badge) => {
+            const Icon = badge.icon;
 
-          return (
-            <div
-              key={badge.id}
-              className="
-                  group
+            return (
+              <div
+                key={badge.id}
+                className="
+                  w-full
+                  min-h-22.5
                   flex
                   items-center
                   gap-5
-                  bg-[#111111]
                   rounded-2xl
-                  p-5
+                  border
+                  border-white
+                  bg-[#111111]
+                  px-6
+                  py-5
                   transition-all
                   duration-300
                   hover:-translate-y-1
                   hover:border-amber-400/30
-                  hover:shadow-lg border border-white
+                  hover:shadow-xl
                 "
-            >
-              {/* Icon */}
-
-              <div
-                className={`
-                    w-12
+              >
+                <div
+                  className={`
                     h-12
+                    w-12
                     rounded-xl
                     ${badge.bg}
                     flex
                     items-center
                     justify-center
                     shrink-0
-                    group-hover:scale-110
-                    transition
-                    duration-300 
                   `}
-              >
-                <Icon size={24} strokeWidth={2} className={badge.iconColor} />
-              </div>
-
-              {/* Content */}
-
-              <div className="min-w-0 ">
-                <h4
-                  className="
-                      text-white
-                      text-base
-                      font-semibold
-                      tracking-tight
-                    "
                 >
-                  {badge.title}
-                </h4>
+                  <Icon size={24} className={badge.iconColor} />
+                </div>
 
-                <p
-                  className="
-                      text-sm
-                      text-neutral-400
-                      mt-1
-                    "
-                >
-                  {badge.desc}
-                </p>
+                <div className="flex-1">
+                  <h4 className="text-white text-lg font-semibold">
+                    {badge.title}
+                  </h4>
+
+                  <p className="mt-1 text-sm text-gray-400">{badge.desc}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
