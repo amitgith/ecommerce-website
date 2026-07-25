@@ -9,9 +9,8 @@ const Navbar = () => {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  const { cartItems, setIsCartOpen } = useContext(MyStore);
-
-  const [scrolled, setScrolled] = useState(false);
+  const { cartItems, setIsCartOpen, scrolled, setScrolled } =
+    useContext(MyStore);
 
   // Navbar Scroll Effect
   useEffect(() => {

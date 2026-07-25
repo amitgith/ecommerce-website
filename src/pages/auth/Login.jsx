@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { Mail, Lock, Eye, EyeOff, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
+import { MyStore } from "../../context/MyContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
+  const { showPassword, setShowPassword } = useContext(MyStore);
 
   const {
     register,
@@ -47,83 +48,92 @@ const Login = () => {
     >
       {/* LEFT SIDE */}
 
+      {/* LEFT SIDE */}
+
       <div
         className="
-        w-full
-        lg:w-1/2
-        flex
-        flex-col
-        justify-between
-        p-5
-        sm:p-8
-        md:p-12
-        lg:p-16
-        relative
-        overflow-hidden
-        min-h-162.5
-        lg:min-h-screen
-        "
+  relative
+  w-full
+  lg:w-1/2
+  min-h-[60vh]
+  lg:min-h-screen
+  flex
+  flex-col
+  justify-between
+  overflow-hidden
+  px-6
+  sm:px-10
+  lg:px-16
+  py-8
+  lg:py-12
+"
       >
+        {/* Background Glow */}
+
+        <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-amber-600/10 blur-[120px]" />
+
+        <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-amber-600/10 blur-[130px]" />
+
         {/* Logo */}
 
-        <div className="flex items-center gap-3">
+        <div className="relative z-10 flex items-center gap-3">
           <div
             className="
-            flex
-            h-10
-            w-10
-            items-center
-            justify-center
-            rounded-xl
-            bg-amber-600
-            "
+      h-12
+      w-12
+      rounded-xl
+      bg-amber-600
+      flex
+      items-center
+      justify-center
+      shadow-lg
+    "
           >
-            <ShoppingBag size={20} className="text-black" />
+            <ShoppingBag size={22} className="text-black" />
           </div>
 
-          <span
-            className="
-            text-xl
-            sm:text-2xl
-            font-bold
-            "
-          >
-            SkyMart
-          </span>
+          <h2 className="text-3xl font-bold tracking-wide">
+            Sky<span className="text-amber-600">Mart</span>
+          </h2>
         </div>
 
-        {/* Content */}
+        {/* Hero */}
 
         <div
           className="
-          max-w-xl
-          space-y-5
-          sm:space-y-6
-          mt-12
-          lg:mt-0
-          "
+    relative
+    z-10
+    flex-1
+    flex
+    flex-col
+    justify-center
+    py-14
+    lg:py-0
+    max-w-xl
+  "
         >
-          <span
+          <p
             className="
-            text-xs
-            font-semibold
-            tracking-widest
-            text-amber-400
-            uppercase
-            "
+      uppercase
+      tracking-[5px]
+      text-xs
+      font-bold
+      text-amber-400
+      mb-6
+    "
           >
-            Welcome back
-          </span>
+            Welcome Back
+          </p>
 
           <h1
             className="
-            text-3xl
-            sm:text-4xl
-            md:text-5xl
-            lg:text-6xl
-            font-extrabold
-            leading-tight
-            "
+      text-4xl
+      sm:text-5xl
+      lg:text-6xl
+      xl:text-7xl
+      font-extrabold
+      leading-[1.05]
+    "
           >
             Shop the future.
             <br />
@@ -132,12 +142,13 @@ const Login = () => {
 
           <p
             className="
-            text-gray-400
-            text-sm
-            sm:text-base
-            leading-relaxed
-            max-w-md
-            "
+      mt-8
+      max-w-md
+      text-gray-400
+      text-base
+      sm:text-lg
+      leading-8
+    "
           >
             Thousands of products, lightning-fast delivery, and prices that make
             your wallet happy.
@@ -148,12 +159,14 @@ const Login = () => {
 
         <div
           className="
-          grid
-          grid-cols-3
-          gap-2
-          sm:gap-4
-          mt-10
-          "
+    relative
+    z-10
+    grid
+    grid-cols-1
+    sm:grid-cols-3
+    gap-4
+    mt-10
+  "
         >
           {[
             ["20K+", "Products"],
@@ -163,35 +176,40 @@ const Login = () => {
             <div
               key={index}
               className="
-              border
-              border-white
-              bg-[#0F0F0F]
-              backdrop-blur-md
-              rounded-xl
-              p-3
-              sm:p-4
-              text-center
-              "
+        rounded-2xl
+        border
+        border-white
+        bg-[#0F0F0F]
+        p-5
+        flex
+        flex-col
+        items-center
+        justify-center
+        text-center
+        transition-all
+        duration-300
+        hover:border-amber-600
+      "
             >
               <h3
                 className="
-                text-sm
-                sm:text-xl
-                font-bold
-                text-amber-600
-                "
+          text-2xl
+          sm:text-3xl
+          font-bold
+          text-amber-600
+        "
               >
                 {item[0]}
               </h3>
 
               <p
                 className="
-                text-[9px]
-                sm:text-[10px]
-                text-white
-                uppercase
-                mt-1
-                "
+          mt-2
+          text-xs
+          uppercase
+          tracking-widest
+          text-gray-400
+        "
               >
                 {item[1]}
               </p>

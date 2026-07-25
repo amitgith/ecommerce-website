@@ -14,6 +14,9 @@ export const ContextProvider = ({ children }) => {
 
   const [singleProductData, setSingleProductData] = useState({});
 
+  const [scrolled, setScrolled] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   // ✅ Load Cart from LocalStorage
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem("cartItems");
@@ -70,6 +73,9 @@ export const ContextProvider = ({ children }) => {
 
         isCartOpen,
         setIsCartOpen,
+        scrolled,
+        setScrolled,
+        showPassword, setShowPassword
       }}
     >
       {children}
