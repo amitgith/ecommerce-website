@@ -1,0 +1,36 @@
+[33mc16b4d8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fixed routing for GitHub Pages deployment
+[33m73590c9[m Completed UI improvements and functionality
+[33m2f46425[m Completed UI improvements and functionality
+[33mdb957dd[m Add responsive layout for login page
+[33m0762ae5[m feat: add local storage for cart and update navbar logo
+[33m1ea5f4a[m UI: change background and theme colors to amber
+[33mdc5cac4[m color changes
+[33m38f0fff[m styling changes
+[33mded84bf[m register ui and logic done
+[33me7909e1[m register ui and logic add
+[33m14bfb53[m login functionality add done
+[33m8c02cff[m login page styling changes
+[33m22cecdd[m Cart.jsx styling process
+[33mdb44d30[m shop.jsx styling changes
+[33m0ff0ebc[m fixing statcards responsiveness
+[33m138d9fd[m adding functionality toprelated product
+[33m76576db[m adding toprelated product ui
+[33m07a1ff9[m creating About ui
+[33m8645ae7[m UI color changes
+[33m526a869[m correction width
+[33m8c8f583[m adding functionality navbar cart count
+[33me5023ea[m processing productlist UI and functionality
+[33mf85adbb[m creating category UI and add functionality
+[33m481056c[m creating WelcomeBanner UI
+[33mbc061fd[m testing
+[33m79c4614[m adding place order functionality
+[33m4593ee7[m singleProductData functionality added
+[33m5d292a5[m adding add to cart feactures
+[33m47e6e62[m Creating folder ProductDetail, with singleProductData
+[33m0eb5259[m testing
+[33m1fa5d13[m Create shopping UI with search, category, and price filter functionality
+[33m975131d[m feat: improve navbar UI and authentication flow
+[33m7194903[m Add user authentication with localStorage
+[33m2d95ad1[m feat: add form validation for login and register
+[33m3ea954a[m Add login and register page UI
+[33m4c1d2be[m Initial project structure
