@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { ShoppingCart, Star } from "lucide-react";
 import { useNavigate } from "react-router";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const RelatedProducts = ({ category, currentId }) => {
   const navigate = useNavigate();

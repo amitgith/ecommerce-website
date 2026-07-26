@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router";
 import axios from "axios";
-import { MyStore } from "../context/MyContext";
+import { MyStore } from "../context/MyStore";
 
 import {
   ShoppingCart,

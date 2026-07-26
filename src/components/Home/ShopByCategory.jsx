@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ArrowRight, Laptop, Shirt, Gem, ShoppingBag } from "lucide-react";
 import { useNavigate } from "react-router";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const ShopByCategory = () => {
   const navigate = useNavigate();

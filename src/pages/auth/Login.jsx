@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { Mail, Lock, Eye, EyeOff, ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const Login = () => {
   const navigate = useNavigate();

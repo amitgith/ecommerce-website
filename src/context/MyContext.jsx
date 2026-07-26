@@ -1,7 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-
-export const MyStore = createContext();
+import { MyStore } from "./MyStore";
 
 export const ContextProvider = ({ children }) => {
   const [shopsData, setShopsData] = useState([]);
@@ -75,7 +74,8 @@ export const ContextProvider = ({ children }) => {
         setIsCartOpen,
         scrolled,
         setScrolled,
-        showPassword, setShowPassword
+        showPassword,
+        setShowPassword,
       }}
     >
       {children}

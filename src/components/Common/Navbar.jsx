@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { ShoppingCart, LogOut, Store, Menu, X } from "lucide-react";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 import toast from "react-hot-toast";
 
 const Navbar = () => {

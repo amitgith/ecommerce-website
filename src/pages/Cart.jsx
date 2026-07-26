@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { X, ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
-import { MyStore } from "../context/MyContext";
+import { MyStore } from "../context/MyStore";
 import toast from "react-hot-toast";
 
 const Cart = () => {

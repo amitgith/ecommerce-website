@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { Star, Zap, Shield, Tag, ShoppingBag, ArrowRight } from "lucide-react";
 
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const ProductLists = () => {
   const navigate = useNavigate();

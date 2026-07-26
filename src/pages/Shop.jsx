@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
-import { MyStore } from "../context/MyContext";
+import { MyStore } from "../context/MyStore";
 import ProductCard from "../components/Common/ProductCard";
 import Footer from "../components/Common/Footer";
 

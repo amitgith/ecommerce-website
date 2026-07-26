@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ShoppingCart, DollarSign, Star, Grid2x2 } from "lucide-react";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const StatCards = () => {
   const { cartItems, shopsData } = useContext(MyStore);

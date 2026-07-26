@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ShoppingCart, Star, Heart } from "lucide-react";
 import { useNavigate } from "react-router";
-import { MyStore } from "../../context/MyContext";
+import { MyStore } from "../../context/MyStore";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
